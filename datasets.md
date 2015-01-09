@@ -1,5 +1,7 @@
 #Core datasets
 
+*need to link to actual data, not just pdf's*
+
 ##barnacle settlement
 http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0022913#pone-0022913-g008
 http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0046513
