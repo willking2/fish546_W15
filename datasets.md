@@ -30,7 +30,12 @@
   - [paper](http://www.sciencedirect.com/science/article/pii/S1744117X11000372)
 
 ## Nucella
-### Chu et al. 2014
+### Chu et al. 2014a
+  - summary: looked at changes in *Nucella* transcriptome in presence of predation and temp signals
+  - [paper](http://onlinelibrary.wiley.com.offcampus.lib.washington.edu/doi/10.1111/mec.12994/full)
+  - [transriptome and more](http://datadryad.org/resource/doi:10.5061/dryad.610dd)
+
+### Chu et al. 2014b
   - summary: compared *Nucella* from N and S Atlantic, found genomic differences, heat stress genes differences
   - [paper](http://onlinelibrary.wiley.com/doi/10.1111/mec.12681/abstract?deniedAccessCustomisedMessage=&userIsAuthenticated=false)
   - [RADtags](http://dx.doi.org/10.1111/mec.12681)
