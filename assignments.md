@@ -16,5 +16,4 @@
 result: search SQL share for database titled "UniprotProtNamesReviewed_yes20130610_immune"
 
 ###To-do
-- IPython
 - Unix Shell
