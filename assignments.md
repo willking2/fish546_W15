@@ -3,6 +3,7 @@
 
 ###To-do
 - finish issues
+- **figure out datasets** 
 
 #Week 1
 ##Summary
@@ -15,7 +16,5 @@
 result: search SQL share for database titled "UniprotProtNamesReviewed_yes20130610_immune"
 
 ###To-do
-- install Git Bash
 - IPython
 - Unix Shell
-- project progress
