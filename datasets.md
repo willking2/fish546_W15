@@ -29,7 +29,8 @@
 ### Wong et al. 2011 -- not sure if usable
   - [paper](http://www.sciencedirect.com/science/article/pii/S1744117X11000372)
 
-##Nucella
+## Nucella
+### Chu et al. 2014
   - summary: compared *Nucella* from N and S Atlantic, found genomic differences, heat stress genes differences
   - [paper](http://onlinelibrary.wiley.com/doi/10.1111/mec.12681/abstract?deniedAccessCustomisedMessage=&userIsAuthenticated=false)
   - [RADtags](http://dx.doi.org/10.1111/mec.12681)
