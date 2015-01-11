@@ -3,8 +3,6 @@
 
 ###To-do
 - finish issues
-- 
-
 
 #Week 1
 ##Summary
