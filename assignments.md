@@ -1,9 +1,9 @@
 #Week 1
 ##Summary
--answered  "issues" (questions for class) 1-4
--set up GitHub, fish546 repository
--set up iPlant Collaborative, fish546 working directory
--SQL query exercise
+- answered  "issues" (questions for class) 1-4
+- set up GitHub, fish546 repository
+- set up iPlant Collaborative, fish546 working directory
+- SQL query exercise
 
 ###SQL query exercise
 result: search for database titled "UniprotProtNamesReviewed_yes20130610_immune"
