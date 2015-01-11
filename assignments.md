@@ -1,3 +1,11 @@
+#Week 2
+##Summary
+
+To-do
+- finish issues
+- 
+
+
 #Week 1
 ##Summary
 - answered  "issues" (questions for class) 1-4
@@ -13,4 +21,3 @@ To-do
 - IPython
 - Unix Shell
 - project progress
-
