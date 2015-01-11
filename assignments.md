@@ -6,7 +6,11 @@
 - SQL query exercise
 
 ###SQL query exercise
-result: search for database titled "UniprotProtNamesReviewed_yes20130610_immune"
+result: search SQL share for database titled "UniprotProtNamesReviewed_yes20130610_immune"
 
-To-do: install Git Bash, IPython, finish reading, Unix Shell, project progress
+To-do
+- install Git Bash
+- IPython
+- Unix Shell
+- project progress
 
