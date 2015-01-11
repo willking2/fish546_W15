@@ -1,7 +1,7 @@
 #Week 2
 ##Summary
 
-To-do
+###To-do
 - finish issues
 - 
 
@@ -16,7 +16,7 @@ To-do
 ###SQL query exercise
 result: search SQL share for database titled "UniprotProtNamesReviewed_yes20130610_immune"
 
-To-do
+###To-do
 - install Git Bash
 - IPython
 - Unix Shell
