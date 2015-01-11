@@ -30,4 +30,7 @@
   - [paper](http://www.sciencedirect.com/science/article/pii/S1744117X11000372)
 
 ##Nucella
-http://onlinelibrary.wiley.com/doi/10.1111/mec.12681/abstract?deniedAccessCustomisedMessage=&userIsAuthenticated=false
+  - summary: compared *Nucella* from N and S Atlantic, found genomic differences, heat stress genes differences
+  - [paper](http://onlinelibrary.wiley.com/doi/10.1111/mec.12681/abstract?deniedAccessCustomisedMessage=&userIsAuthenticated=false)
+  - [RADtags](http://dx.doi.org/10.1111/mec.12681)
+  - [possibly full transcriptome, but access restricted](http://www.ncbi.nlm.nih.gov/sra/?term=SRX357400)
