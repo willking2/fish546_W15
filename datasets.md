@@ -40,3 +40,10 @@
   - [paper](http://onlinelibrary.wiley.com/doi/10.1111/mec.12681/abstract?deniedAccessCustomisedMessage=&userIsAuthenticated=false)
   - [RADtags](http://dx.doi.org/10.1111/mec.12681)
   - [possibly full transcriptome, but access restricted](http://www.ncbi.nlm.nih.gov/sra/?term=SRX357400)
+
+*data citation*
+paper
+Chu ND, Kaluziak ST, Trussell GC, Vollmer SV (2014) Phylogenomic analyses reveal latitudinal population structure and polymorphisms in heat stress genes in the North Atlantic snail Nucella lapillus. Molecular Ecology 23(7): 1863-1873. http://dx.doi.org/10.1111/mec.12681
+
+Dryad
+Chu ND, Kaluziak ST, Trussell GC, Vollmer SV (2014) Data from: Phylogenomic analyses reveal latitudinal population structure and polymorphisms in heat stress genes in the North Atlantic snail Nucella lapillus. Dryad Digital Repository. http://dx.doi.org/10.5061/dryad.610dd
