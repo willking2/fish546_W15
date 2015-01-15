@@ -2,6 +2,7 @@
 ##Summary
 - decided on using Nucella dataset from Chen et al dryad
 - created nlap-ano directory
+- installed blast
 
 ###metadata
 do via README.md files, create w/ "touch" command
