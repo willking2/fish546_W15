@@ -1,6 +1,7 @@
 #Week 2
 ##Summary
 - decided on using Nucella dataset from Chen et al dryad
+- created nlap-ano directory
 
 ###metadata
 do via README.md files, create w/ "touch" command
@@ -11,8 +12,8 @@ metadata should include:
 
 ###To-do
 - BDS readings
-- finish 'issues'
-- make directory
+- CCS 02
+- download blast, blast things (run blastx)
 
 #Week 1
 ##Summary
