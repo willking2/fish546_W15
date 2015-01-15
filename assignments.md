@@ -1,9 +1,18 @@
 #Week 2
 ##Summary
+- decided on using Nucella dataset from Chen et al dryad
+
+###metadata
+do via README.md files, create w/ "touch" command
+metadata should include:
+- methods, work flows, codes
+- data source, when, version, how download, where
+- software versions
 
 ###To-do
-- finish issues
-- **figure out datasets** 
+- BDS readings
+- finish 'issues'
+- make directory
 
 #Week 1
 ##Summary
