@@ -2,7 +2,7 @@
 ##Summary
 - decided on using Nucella dataset from Chen et al dryad
 - created nlap-ano directory
-- installed blast
+- installed blast, made blast database
 
 ###metadata
 do via README.md files, create w/ "touch" command
@@ -12,9 +12,9 @@ metadata should include:
 - software versions
 
 ###To-do
-- BDS readings
+- BDS reading #2
 - CCS 02
-- download blast, blast things (run blastx)
+- finish blasting 
 
 #Week 1
 ##Summary
