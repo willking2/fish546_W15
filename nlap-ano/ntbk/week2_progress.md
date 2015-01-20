@@ -17,6 +17,6 @@ Started using IPython notebook, but couldn't figure out how to juggle Unix file 
 
 The Blastx that I did manage to run created a .tab file that reached 611KB after running for 48 hrs straight. Meanwhile, my computer was slow. With an ill timed attempt at syncing GitHub, and a resulting force-shut down of the computer, the blastx was put out of its misery. 
 
-Things to figure out for week 3
+**Things to figure out for week 3**
 - IPython, how to integrate with Unix, PC
 - Blast, how to do it faster and shorter
