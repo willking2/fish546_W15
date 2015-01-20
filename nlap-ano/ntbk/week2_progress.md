@@ -1,9 +1,13 @@
 # Week 2 progress
 Running BLAST turned out to be more difficult than anticipated (as most things do, the first time)
 
+**summary**
 - created project directory structure
 - installed BLAST
 - downloaded uniprot dataset
+- spent time trying to figure out BLAST, IPython, GitHub, organization
+  - bascially, "investment week" -- climbing the learning curve
+- created an incomplete blast result 
 
 The problem was, I thought everything had to be contained in the project directory, so I put BLAST and uniprot in it. That caused GitHub Desktop to break down when it tried to sync with the online repository. Computer whined and froze a few times before I figured out to just delete the local clone.
 
