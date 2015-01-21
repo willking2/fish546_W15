@@ -4,6 +4,7 @@
 - /data - datasets used in the project that fits on GitHub
 - /ntbk - weekly progress updates 
 - /scripts - ipython notebooks used for analyses, e.g. running blast
+- /products - final products of project
 
 **Files used in project but not in this directory**
 - BLAST
