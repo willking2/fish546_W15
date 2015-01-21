@@ -1,3 +1,11 @@
+#Week 3
+## Summary
+- Tues met up with class, set up Hummingbird, linked GitHub directories
+- 
+
+Hummingbird
+- **remember to pull before doing stuff! sync it up so Git doesn't freak out**
+
 #Week 2
 ##Summary
 - decided on using Nucella dataset from Chen et al dryad
@@ -10,11 +18,6 @@ metadata should include:
 - methods, work flows, codes
 - data source, when, version, how download, where
 - software versions
-
-###To-do
-- BDS reading #2
-- CCS 02
-- finish blasting 
 
 #Week 1
 ##Summary
