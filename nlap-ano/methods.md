@@ -2,9 +2,9 @@
 (at this point, written mostly for myself, can rephrase later to turn in for class)
 
 QUESTIONS: 
-- humming bird OS, verison, etc.? 
-
-To annotate the transcriptome of the Dog whelk, *N. lapillus*, I used Blastx v 2.2.30+ to annotate contigs against the UniProtKB Swiss-prot database, applying an E-value cut-off of 1E-20 (**what is this**).
+- hummingbird OS, verison, etc.? 
+------------------------------------------------------------------
+To annotate the transcriptome of the Dog whelk, *N. lapillus*, I used Blastx v 2.2.29+ to annotate contigs against the UniProtKB Swiss-prot database, applying an E-value cut-off of 1E-20 (**what is this**).
 
 
 ## outline
