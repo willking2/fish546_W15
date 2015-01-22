@@ -6,6 +6,7 @@ To annotate the transcriptome of the Dog whelk, *N. lapillus*, I used Blastx v 2
 # outline
 1. main goal
 2. query (?) info -- N. lapillus transcriptome from Chen et al
+2.5 working in srlab hummingbird
 3. blast x info
 4. uniprot info
 5. get .tab file, and then...?
