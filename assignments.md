@@ -4,8 +4,7 @@
 - Wed: downloaded uniprot into hummingbird after troubleshooting
     - currently running blastx... fingers crossed
 
-Hummingbird
-- **remember to pull before doing stuff! sync it up so Git doesn't freak out**
+**issues**: ipython notebook, localhost, hummingbird no bueno
 
 #Week 2
 ##Summary
