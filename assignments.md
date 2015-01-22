@@ -1,7 +1,8 @@
 #Week 3
 ## Summary
-- Tues met up with class, set up Hummingbird, linked GitHub directories
-- 
+- Tues: met up with class, set up Hummingbird, linked GitHub directories
+- Wed: downloaded uniprot into hummingbird after troubleshooting
+    - currently running blastx... fingers crossed
 
 Hummingbird
 - **remember to pull before doing stuff! sync it up so Git doesn't freak out**
