@@ -1,8 +1,8 @@
 #Week 3
 ## Summary
 - Tues: met up with class, set up Hummingbird, linked GitHub directories
-- Wed: downloaded uniprot into hummingbird after troubleshooting
-    - currently running blastx... fingers crossed
+- Wed: downloaded uniprot into hummingbird after troubleshooting, ran blastx
+- Thurs: blastx made a .tab file, hopefully it's a complete one
 
 **issues**: ipython notebook, localhost, hummingbird no bueno
 
