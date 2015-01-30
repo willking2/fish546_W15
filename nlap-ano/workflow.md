@@ -30,7 +30,7 @@ hummingbird:willbigdata srlab$`
 
 # 2) make uniprot into a blast database
 
-hummingbird:willbigdata srlab$ pwd
+`hummingbird:willbigdata srlab$ pwd
 /Users/srlab/willbigdata
 hummingbird:willbigdata srlab$ ls
 uniprot_sprot.fasta
@@ -44,16 +44,16 @@ Sequence type: Protein
 Keep Linkouts: T
 Keep MBits: T
 Maximum file size: 1000000000B
-Adding sequences from FASTA; added 547357 sequences in 54.0656 seconds.
+Adding sequences from FASTA; added 547357 sequences in 54.0656 seconds.`
 
 # 3) run blastx
 
-hummingbird:willbigdata srlab$ pwd
+`hummingbird:willbigdata srlab$ pwd
 /Users/srlab/willbigdata
 hummingbird:willbigdata srlab$ ls
 uniprot_sprot.fasta             uniprot_sprot_21JAN2015.pin
 uniprot_sprot_21JAN2015.phr     uniprot_sprot_21JAN2015.psq
 hummingbird:willbigdata srlab$ blastx -query /Users/srlab/fish546_W15/nlap-ano/
-data/N_lapillus.fa -db uniprot_sprot_21JAN2015 -out Nlap_uniprot_blastx.tab -evalue 1E-20 -max_target_seqs 1 -outfmt 6
+data/N_lapillus.fa -db uniprot_sprot_21JAN2015 -out Nlap_uniprot_blastx.tab -evalue 1E-20 -max_target_seqs 1 -outfmt 6`
 
 # 4)
