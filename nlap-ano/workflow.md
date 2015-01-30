@@ -13,8 +13,7 @@
 
 `hummingbird:willbigdata srlab$ pwd
 /Users/srlab/willbigdata
-hummingbird:willbigdata srlab$ curl -o uniprot_sprot.fasta.gz ftp://ftp.uniprot
-.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot
+hummingbird:willbigdata srlab$ curl -o uniprot_sprot.fasta.gz ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot
 .fasta.gz`
 
 ## unzip
@@ -34,10 +33,10 @@ hummingbird:willbigdata srlab$`
 /Users/srlab/willbigdata
 hummingbird:willbigdata srlab$ ls
 uniprot_sprot.fasta
-hummingbird:willbigdata srlab$ makeblastdb -in uniprot_sprot.fasta -dbtype -out uniprot_sprot_21JAN2015
+hummingbird:willbigdata srlab$ makeblastdb -in uniprot_sprot.fasta -dbtype -out uniprot_sprot_21JAN2015`
 
 
-Building a new DB, current time: 01/21/2015 20:48:51
+`Building a new DB, current time: 01/21/2015 20:48:51
 New DB name:   uniprot_sprot_21JAN2015
 New DB title:  uniprot_sprot.fasta
 Sequence type: Protein
