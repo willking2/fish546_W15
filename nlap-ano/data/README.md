@@ -8,3 +8,9 @@
   - Chu ND, Kaluziak ST, Trussell GC, Vollmer SV (2014) Data from: Phylogenomic analyses reveal latitudinal population structure and polymorphisms in heat stress genes in the North Atlantic snail Nucella lapillus. Dryad Digital Repository. http://dx.doi.org/10.5061/dryad.610dd
 - downloaded 12 Jan 2015 on Windows 7 from Dryad 
 
+**Nlap_uniprot_blastx.tab**
+.tab output file from blastx
+
+**Nlap_uniprot_blastx2.tab**
+.tab output file from blastx, with SPID (swissprot ID) separated out into its own column (for joining purposes)
+
