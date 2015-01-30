@@ -1,12 +1,5 @@
 # Workflow
 
-- tab delimited output file from blastx
-- upload blastx output to SQLshare
-- join with sr320's [SPID and GO numbers](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/SPID%20and%20GO%20Numbers), make new table
-- join product from step 3 with sr320's [GO to GOslim table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim)
-- download super file, this is the annotated transcriptome
-
--------------------------------------------------------
 # 1) download uniprot swissprot dataset
 
 ## download from internet
@@ -55,4 +48,6 @@ uniprot_sprot_21JAN2015.phr     uniprot_sprot_21JAN2015.psq
 hummingbird:willbigdata srlab$ blastx -query /Users/srlab/fish546_W15/nlap-ano/
 data/N_lapillus.fa -db uniprot_sprot_21JAN2015 -out Nlap_uniprot_blastx.tab -evalue 1E-20 -max_target_seqs 1 -outfmt 6`
 
-# 4)
+# 4) upload blastx .tab output to SQLshare
+
+# 5) 
