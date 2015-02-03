@@ -92,4 +92,10 @@ Now, the SPID can be in its own column! (e.g. `sp	Q9V8P9	TOPRS_DROME`)
 
 I physically sat at Hummingbird desktop and got my `Nlap_uniprot_blastx.tab` file off of it using a USB, then put it onto my (Will's) PC. I then uploaded  (point and click) this file as a database onto SQLShare (`Nlap_uniprot_blastx2_4.tab`... `2_4` because I had to go through a few trial and error attempts).
 
+![upload](.\img\Capture.PNG)
+
+### Join to GO id's
+
+
+
 
