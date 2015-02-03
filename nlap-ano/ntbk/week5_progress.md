@@ -3,6 +3,7 @@
 To-do
 - put in direct links to files for output for reproducibility
 - work on products
+- update readme.md files
 
 Desired products (after talking w/ Steven)
   products
