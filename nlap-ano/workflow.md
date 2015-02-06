@@ -21,6 +21,8 @@ Rename transcriptome to `N.lapillus.fa`.
 
 Push transcriptome (`N.lapillus.fa`) to [GitHub repo](https://github.com/willking2/fish546_W15/tree/master/nlap-ano/data).
 
+File here: [`N.lapillus.fa`](./data/N_lapillus.fa)
+
 ### Obtain Uniprot dataset
 Download zipped Uniprot-SwissProt dataset (`.fasta.gz`) from [Uniprot website](http://www.uniprot.org/downloads) onto Roberts lab Hummingbird.
 
@@ -74,6 +76,8 @@ Notice the Evalue and outputformat as "6" (`.tab`)
 	hummingbird:willbigdata srlab$ blastx -query /Users/srlab/fish546_W15/nlap-ano/
 	data/N_lapillus.fa -db uniprot_sprot_21JAN2015 -out Nlap_uniprot_blastx.tab -evalue 1E-20 -max_target_seqs 1 -outfmt 6
 
+Output file here: [`Nlap_uniprot_blastx.tab`](./data/Nlap_uniprot_blastx.tab)
+
 #Concatenate
 
 Goal is to link `blastx` `.tab` output file to GO ids (GOID; [Gene Ontology](http://geneontology.org/) database that has functional annotations for protein sequences).
@@ -88,9 +92,11 @@ The `blastx` `.tab` output file has the Swissprot ID (SPID) jammed in one column
 
 Now, the SPID can be in its own column! (e.g. `sp	Q9V8P9	TOPRS_DROME`) 
 
+Output file here: [`Nlap_uniprot_blastx2.tab`](./data/Nlap_uniprot_blastx2.tab)
+
 ### Upload blastx output to SQLShare
 
-I physically sat at Hummingbird desktop and got my `Nlap_uniprot_blastx.tab` file off of it using a USB, then put it onto my (Will's) PC. I then uploaded  (point and click) this file as a database onto SQLShare (`Nlap_uniprot_blastx2_4.tab`... it's `2_4` because I had to go through a few trial and error attempts).
+I physically sat at Hummingbird desktop and got my `Nlap_uniprot_blastx.tab` file off of it using a USB, then put it onto my (Will's) PC. I then uploaded  (point and click) the file ([`Nlap_uniprot_blastx2.tab`](./data/Nlap_uniprot_blastx2.tab)) with isolated SPID (see previous step) as a database onto SQLShare (`Nlap_uniprot_blastx2_4.tab`... it's `2_4` because I had to go through a few trial and error attempts).
 
 ![upload](./img/Capture.PNG)
 
