@@ -40,7 +40,7 @@ Unzip the file
 
 #Blast
 
-Note: Blast 2.2.29 was already installed on Roberts Lab Hummingbird and configured so that I can run Blast commands from anywhere in the directory (as opposed to the usual case where I have to specify full file path to command, e.g. ../bin/blastx)
+Note: I used **Blast 2.2.29**. This was already installed on Roberts Lab Hummingbird and configured so that I can run Blast commands from anywhere in the directory (as opposed to the usual case where I have to specify full file path to command, e.g. ../bin/blastx)
 
 ### Uniprot --> Blast db
 
@@ -76,7 +76,7 @@ Notice the Evalue and outputformat as "6" (`.tab`)
 
 #Concatenate
 
-Goal is to link `blastx` `.tab` output file to GO ids ([Gene Ontology](http://geneontology.org/) database that has functional annotations for protein sequences).
+Goal is to link `blastx` `.tab` output file to GO ids (GOID; [Gene Ontology](http://geneontology.org/) database that has functional annotations for protein sequences).
 
 Take advantage of Roberts Lab tables on [SQLShare](https://sqlshare.escience.washington.edu/accounts/login/?next=/sqlshare/%3F__hash__%3D%2523s%253Dhome#s=home).
 
@@ -90,11 +90,29 @@ Now, the SPID can be in its own column! (e.g. `sp	Q9V8P9	TOPRS_DROME`)
 
 ### Upload blastx output to SQLShare
 
-I physically sat at Hummingbird desktop and got my `Nlap_uniprot_blastx.tab` file off of it using a USB, then put it onto my (Will's) PC. I then uploaded  (point and click) this file as a database onto SQLShare (`Nlap_uniprot_blastx2_4.tab`... `2_4` because I had to go through a few trial and error attempts).
+I physically sat at Hummingbird desktop and got my `Nlap_uniprot_blastx.tab` file off of it using a USB, then put it onto my (Will's) PC. I then uploaded  (point and click) this file as a database onto SQLShare (`Nlap_uniprot_blastx2_4.tab`... it's `2_4` because I had to go through a few trial and error attempts).
 
 ![upload](./img/Capture.PNG)
 
 ### Join to GO id's
+
+Using SQLShare, I joined my blastx output (`Nlap_uniprot_blastx2_4.tab`) to a [SQL table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/SPID%20and%20GO%20Numbers) (Roberts lab resource) that has both SPID and GOID. The [resulting table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) has blastx output data, SPID, and corresponding GOID.
+
+![SPIDandGOID](./img/Capture2.PNG)
+
+![jointoGOID](./img/Capture3.PNG)
+
+### Join to GOSlim terms
+
+Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) from the previous step to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim) (Roberts lab resource) that has both GOID and GOSlim terms. The resulting table is my [annotated *Nucella lapillus* transcriptome](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated) that has blastx output data, SPID, GOID, and GOSlim terms.
+
+![GOandGOSlim](./img/Capture4.PNG)
+
+![Nlapannotated](./img/Capture5.PNG)
+
+### Product 1: Annotated *N. lapillus* transcriptome -- contigs + GO info
+
+File here: [Nlap_annotated_GO.csv](./data/Nlap_annotated_GO.csv)
 
 
 
