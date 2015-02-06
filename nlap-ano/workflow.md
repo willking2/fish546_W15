@@ -104,7 +104,7 @@ Using SQLShare, I joined my blastx output (`Nlap_uniprot_blastx2_4.tab`) to a [S
 
 ### Join to GOSlim terms
 
-Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) from the previous step to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim) (Roberts lab resource) that has both GOID and GOSlim terms. The resulting table is my [annotated *Nucella lapillus* transcriptome](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated) that has blastx output data, SPID, GOID, and GOSlim terms.
+Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) from the previous step to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim) (Roberts lab resource) that has both GOID and GOSlim terms. The resulting table is my [annotated *Nucella lapillus* transcriptome with contigs and GO info (Product 1)](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated) that has blastx output data, SPID, GOID, and GOSlim terms.
 
 ![GOandGOSlim](./img/Capture4.PNG)
 
@@ -112,8 +112,22 @@ Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sql
 
 ### Product 1: Annotated *N. lapillus* transcriptome -- contigs + GO info
 
-File here: [Nlap_annotated_GO.csv](./data/Nlap_annotated_GO.csv)
+File here: [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv)
+
+### Join to Protein names
+
+Using SQLShare, I joined my blastx output table (`Nlap_uniprot_blastx2_4.tab`)  to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/samwhite%40washington.edu/UniprotProtNamesReviewed_yes20130610) (Roberts lab resource) that has both SPID and Protein names. The resulting table is my [annotated *Nucella lapillus* transcriptome with contigs and protein names (Product 2)](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames) that has blastx output data, SPID, and protein names.
+
+![Nlapannotated-prot](./img/Capture6.PNG)
+
+### Product 2: Annotated *N. lapillus* transcriptome -- contigs + protein names
+
+File here: [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv)
 
 
 
+# List of Products
+### 1) [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) -- contigs and GO info
+
+### 2) [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv) -- contigs and protein names
 
