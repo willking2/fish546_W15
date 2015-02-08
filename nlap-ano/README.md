@@ -1,7 +1,12 @@
-#Fish546 Bioinformatics
+###Fish546 Bioinformatics, W2015
 
-- /analyses - various outputs, including stats, plots, words
-- /data - datasets used in the project that fits on GitHub
-- **/ntbk - weekly progress updates** 
-- /scripts - scripts for running analyses, e.g. running blastx
-- /products - final products of project
+- `./analyses` - `.xls` for plotting
+- `./data` - datasets used in the project
+- `./draft`- narrative of project, including background, data records, and methods
+- `./img` - holds screenshots used in project workflow
+- `./ntbk` - weekly progress updates, including a non-functional Ipython notebook
+- `./products` - annotated transcriptome `.csv` files and protein function plot
+- `./scripts` - scripts for running analyses, e.g. running blastx
+
+
+- `workflow.md` - documentation for reproducing the project

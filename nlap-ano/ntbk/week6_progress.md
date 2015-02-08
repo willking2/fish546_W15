@@ -1,8 +1,9 @@
 # Week 6 progress
 
 - graphed protein function counts
+- updated all `README.md` files
+- cleaned/organized repo
 
 TO DO
 
-- cleaning up repo, updating readme's etc
-- start draft
+- draft
