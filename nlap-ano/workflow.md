@@ -118,7 +118,7 @@ Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sql
 
 ### Product 1: Annotated *N. lapillus* transcriptome -- contigs + GO info
 
-File here: [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv)
+File here: [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv)
 
 ### Join to Protein names
 
@@ -128,12 +128,21 @@ Using SQLShare, I joined my blastx output table (`Nlap_uniprot_blastx2_4.tab`)  
 
 ### Product 2: Annotated *N. lapillus* transcriptome -- contigs + protein names
 
-File here: [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv)
+File here: [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)
 
+### Graph
+
+After fiddling unsuccessfully with R, I decided to graph with Excel-- just took some elbow grease, is all. Count the number of occurrences of each GoSlim_bin using Excel's `COUNTIF` function, throw it on a column graph, and presto:
+
+![graph](./products/Nlap_GOSlim_count.png)
+
+Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 
 
 # List of Products
 ### 1) [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) -- contigs and GO info
 
 ### 2) [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv) -- contigs and protein names
+
+### 3) [[`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of counts of protein frequencies
 
