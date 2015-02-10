@@ -3,7 +3,7 @@
 Note: this workflow presents my actual steps, which were not necessarily the most efficient. Workflow as presented here may bounce around a bit because they are out of chronological sequence.
 
 ## Tunnel to Hummingbird
-On Will's PC, open unix shell (GitBash)
+On Will's PC (PC Windows 7), open unix shell (GitBash)
 
 	Owner@OWNER-PC ~
 	$ ssh srlab@<insert_IPaddress_and_Port_here>
@@ -12,6 +12,8 @@ On Will's PC, open unix shell (GitBash)
 	hummingbird:~ srlab$ pwd
 	/Users/srlab
 	hummingbird:~ srlab$
+
+This creates a tunnel to Hummingbird (Mac OS v10.9.5).
 
 ## Obtain Datasets
 ### Obtain *N. lapillus* transcriptome

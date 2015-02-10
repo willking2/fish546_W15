@@ -14,20 +14,20 @@ The `blastx` output dataset (`Nlap_uniprot_blastx.tab`) contains the contigs of 
 
 [d]
 
-The `SPID and GO Numbers` table contains Uniprot Swissprot ascension numbers and their corresponding Gene Ontology identification codes. It links Swissprot information to full Gene Ontology information. It is available on SQLShare as "`SPID and GO Numbers`". It can be downloaded in `.csv` format.
+The `SPID and GO Numbers` table contains Uniprot Swissprot ascension numbers and their corresponding Gene Ontology identification codes. It links Swissprot information to full Gene Ontology information. It is available on SQLShare as "`SPID and GO Numbers`" (`https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320@washington.edu/SPID and GO Numbers`). It can be downloaded in `.csv` format.
 
 [e]
 
-The `GO_to_GOSlim` table contains Gene Ontology identification codes and their corresponding Gene Ontology Slim codes. As the Gene Ontology is organized hierarchically, this table links full Gene Ontology information to more general Gene Ontology categories. It is available on `SQLShare` as "`GO_toGOSlim`". It can be downloaded in `.csv` format.
+The `GO_to_GOSlim` table contains Gene Ontology identification codes and their corresponding Gene Ontology Slim codes. As the Gene Ontology is organized hierarchically, this table links full Gene Ontology information to more general Gene Ontology categories. It is available on `SQLShare` as "`GO_toGOSlim`" (`https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim`). It can be downloaded in `.csv` format.
 
 [f]
 
-The `UniprotNamesNamesReviewed_yes20130610` table contains protein names with corresponding Uniprot Swissprot ascension numbers. It links Swissprot information to protein names. It is available on `SQLShare` as "`UniprotNamesNamesReviewed_yes20130610`". It can be downloaded in `.csv` format. 
+The `UniprotNamesNamesReviewed_yes20130610` table contains protein names with corresponding Uniprot Swissprot ascension numbers. It links Swissprot information to protein names. It is available on `SQLShare` as "`UniprotNamesNamesReviewed_yes20130610`" (`https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/UniprotProtNamesReviewed_yes20130610_immune`). It can be downloaded in `.csv` format. 
 
 [g]
 
-The `Nlap_annotated_GO.csv` file is the annotated *N. lapillus* transcriptome produced from this project that has full Gene Ontology information, including Gene Ontology Slim categories. It has information on protein function corresponding to each transcribed contig. It is in `.csv` format. The dataset is available on `GitHub` (`https://github.com/willking2/fish546_W15/tree/master/nlap-ano/products`).
+The `Nlap_annotated_GO.csv` file is the annotated *N. lapillus* transcriptome produced from this project that has full Gene Ontology information, including Gene Ontology Slim categories. It has information on protein function corresponding to each transcribed contig. It is in `.csv` format. The dataset is available on `GitHub` (`https://github.com/willking2/fish546_W15/tree/master/nlap-ano/products`) and `SQLShare` as "`Nlap_annotated`" (`https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated`).
 
 [h]
 
-The `Nlap_annotated_proteinnames.csv` file is the annotated *N. lapillus* transcriptome produced from this project that has protein names corresponding to each contig. It is in `.csv` format. The dataset is available on `GitHub` (`https://github.com/willking2/fish546_W15/tree/master/nlap-ano/products`).
+The `Nlap_annotated_proteinnames.csv` file is the annotated *N. lapillus* transcriptome produced from this project that has protein names corresponding to each contig. It is in `.csv` format. The dataset is available on `GitHub` (`https://github.com/willking2/fish546_W15/tree/master/nlap-ano/products`) and `SQLShare` as "`Nlap_annotated_proteinnames`" (`https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames`).
