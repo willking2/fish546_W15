@@ -1,29 +1,13 @@
 # Methods
 
-To annotate the transcriptome of the dog whelk, *Nucella lapillus*, I used Blastx v 2.2.29+ to annotate contigs against the UniProtKB Swiss-prot database, applying an E-value cut-off of 1E-20.
+To annotate the transcriptome of the dog whelk, *Nucella lapillus* [a], I used `Blastx v 2.2.29+` to annotate contigs against the UniProtKB Swiss-prot database [b], applying an E-value cut-off of 1E-20 to create a `blastx` output file [c]. 
 
-The transcriptome of *N. lapillus* was obtained from the Dryad Digital Repository (http://dx.doi.org/10.5061/dryad.610dd) specified in Chu et al. (2014). Blastx was downloaded from the National Center for Biotechnology Information website (http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) as a stand-alone version. The UniProtKB Swiss-prot database was downloaded from the Universal Protein Resource website (http://www.uniprot.org/downloads). For Blastx, the query sequence was the transcriptome of *N. lapillus* and the database for comparison was the UniprotKB Swiss-prot database. 
- 
+The transcriptome of *N. lapillus* was obtained online as specified in Chu et al. (2014). `Blastx` was downloaded from the National Center for Biotechnology Information website as a stand-alone version. The UniProtKB Swiss-prot database was downloaded from the Universal Protein Resource website. For `Blastx`, the query sequence was the transcriptome of *N. lapillus* and the database for comparison was the UniprotKB Swiss-prot database. 
 
-------------------------------------------------------------------
+To annotate the contigs with protein information, I joined the `Blastx` output dataset with corresponding Gene Ontology (GO) information and protein names using `SQLShare`.
 
-## QUESTIONS: 
-hummingbird OS, verison, etc.? 
+The Gene Ontology information was obtained from datasets available on `SQLShare` that link Uniprot SwissProt ascension numbers to GO identification codes [d] to GOSlim identification codes [e]. Similarly, the protein information were obtained from a dataset available on `SQLShare` that links Uniprot SwissProt ascension numbers to protein names [f]. Joins resulted in datasets of contigs with corresponding Gene ontology information [g] and protein names [h].
 
-## outline, other details
-1. main goal
-2. query sequence: N. lapillus transcriptome from Chu et al
-	- downloaded point and click style on Will's PC, then git hubbed to Hummingbird
-	- Dryad Digital Repository. http://dx.doi.org/10.5061/dryad.610dd
-	- downloaded 12 Jan 2015 on Windows 7 from Dryad 
-2.5 working in srlab hummingbird
-3. blast x info
-	- blast stand-alone from NCBI
-	- blastx installed in hummingbird
-	- blastx: 2.2.29+
-	- Package: blast 2.2.29, build Dec 10 2013 15:51:59
-	- was previously configured so that you can use blast commands anywhere in hummingbird, doesn't have to be /bin directory
-4. uniprot info
-	- uniprotKB swiss-prot .fasta file from uniprot website
-	- downloaded into hummingbird:~ srlab/willbigdata on 1/21/15 
-5. get .tab file, and then...?
+-------------------------------------------
+
+Information on datasets included in these methods are available in the `Data_Records.md` file and can are matched by the bracketed letters.
