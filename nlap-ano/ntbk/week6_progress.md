@@ -7,3 +7,4 @@
 TO DO
 
 - draft
+- 'go deeper' by subsetting table to stress, do percentages, etc.
