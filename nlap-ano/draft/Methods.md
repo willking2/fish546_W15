@@ -10,4 +10,6 @@ The Gene Ontology information was obtained from datasets available on `SQLShare`
 
 -------------------------------------------
 
-Information on datasets included in these methods are available in the `Data_Records.md` file and can are matched by the bracketed letters.
+Information on datasets included in these methods are available in the `Data_Records.md` file (available [here](./Data_Records)) and are matched by the bracketed file names.
+
+The workflow of this project can be found [here](../workflow.md).
