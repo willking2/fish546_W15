@@ -35,3 +35,7 @@ The `Nlap_annotated_GO.csv` file is the annotated *N. lapillus* transcriptome pr
 [**`Nlap_annotated_proteinnames.csv`**]
 
 The `Nlap_annotated_proteinnames.csv` file is the annotated *N. lapillus* transcriptome produced from this project that has protein names corresponding to each contig. It is in `.csv` format. The dataset is available on `GitHub` (`https://github.com/willking2/fish546_W15/tree/master/nlap-ano/products`) and `SQLShare` as "`Nlap_annotated_proteinnames`" (`https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames`).
+
+[**`Nlap_GOSlim_count.png`**]
+
+The `Nlap_GOSlim_count.png` file is a bar plot of the frequency of protein functions in the *N. lapillus* transcriptome. It is an image (`.png` format) that can be found on `GitHub` (`https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_count.png`).
