@@ -8,7 +8,7 @@ To annotate the contigs with protein information, I joined the `Blastx` output d
 
 The Gene Ontology information was obtained from datasets available on `SQLShare` that link Uniprot SwissProt ascension numbers to GO identification codes [`SPID and GO Numbers`] to GOSlim identification codes [`GO_to_GOSlim`]. Similarly, the protein information were obtained from a dataset available on `SQLShare` that links Uniprot SwissProt ascension numbers to protein names [`UniprotNamesNamesReviewed_yes20130610`]. Joins resulted in datasets of contigs with corresponding Gene ontology information [`Nlap_annotated_GO.csv`] and protein names [`Nlap_annotated_proteinnames.csv`].
 
-Frequencies [`Nlap_GOSlim_count.png`] and proportions by protein functions of contigs were plotted using Microsoft Excel.
+Counts [`Nlap_GOSlim_count.png`] and proportions by protein functions of contigs were plotted using Microsoft Excel.
 
 -------------------------------------------
 
