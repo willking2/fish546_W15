@@ -144,7 +144,7 @@ Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 
 Again in Excel, I plotted the percentages of contigs by protein function:
 
-![pie](./products/Nlap_GOSlim_percentage.png)
+![pie](./products/Nlap_GOSlim_percent.png)
 
 Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 
