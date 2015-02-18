@@ -132,19 +132,28 @@ Using SQLShare, I joined my blastx output table (`Nlap_uniprot_blastx2_4.tab`)  
 
 File here: [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)
 
-### Graph
+### Product 3: Count Bar Graph of protein functions for *N. lapillus* contigs
 
 After fiddling unsuccessfully with R, I decided to graph with Excel-- just took some elbow grease, is all. Count the number of occurrences of each GoSlim_bin using Excel's `COUNTIF` function, throw it on a column graph, and presto:
 
-![graph](./products/Nlap_GOSlim_count.png)
+![bar](./products/Nlap_GOSlim_count.png)
 
 Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 
+### Product 4: Frequency Pie Chart of protein functions for *N. lapillus* contigs
+
+Again in Excel, I plotted the percentages of contigs by protein function:
+
+![pie](./products/Nlap_GOSlim_percentage.png)
+
+Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 
 # List of Products
 ### 1) [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) -- contigs and GO info
 
 ### 2) [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv) -- contigs and protein names
 
-### 3) [[`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of counts of protein frequencies
+### 3) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of counts of protein frequencies
+
+### 4) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of percentages of protein frequencies
 
