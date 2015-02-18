@@ -38,4 +38,8 @@ The `Nlap_annotated_proteinnames.csv` file is the annotated *N. lapillus* transc
 
 [**`Nlap_GOSlim_count.png`**]
 
-The `Nlap_GOSlim_count.png` file is a bar plot of the frequency of protein functions in the *N. lapillus* transcriptome. It is an image (`.png` format) that can be found on `GitHub` (`https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_count.png`).
+The `Nlap_GOSlim_count.png` file is a bar plot of the counts of protein functions in the *N. lapillus* transcriptome. It is an image (`.png` format) that can be found on `GitHub` (`https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_count.png`).
+
+[**`Nlap_GOSlim_percent.png`**]
+
+The `Nlap_GOSlim_percent.png` file is a pie chart of the proportions (in %) of protein functions in the *N. lapillus* transcriptome. It is an image (`.png` format) that can be found on `GitHub` (`https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_percent.png`).
