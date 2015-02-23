@@ -1,6 +1,8 @@
 # Workflow
 
-Note: this workflow presents my actual steps, which were not necessarily the most efficient. Workflow as presented here may bounce around a bit because they are out of chronological sequence.
+Note: this workflow presents my actual steps, which were not necessarily the most efficient.
+
+Summary list of products at end of workflow.
 
 ## Tunnel to Hummingbird
 On Will's PC (PC Windows 7), open unix shell (GitBash)
@@ -118,7 +120,7 @@ Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sql
 
 ![Nlapannotated](./img/Capture5.PNG)
 
-### Product 1: Annotated *N. lapillus* transcriptome -- contigs + GO info
+Product 1: Annotated *N. lapillus* transcriptome -- contigs + GO info
 
 File here: [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv)
 
@@ -128,32 +130,67 @@ Using SQLShare, I joined my blastx output table (`Nlap_uniprot_blastx2_4.tab`)  
 
 ![Nlapannotated-prot](./img/Capture6.PNG)
 
-### Product 2: Annotated *N. lapillus* transcriptome -- contigs + protein names
+Product 2: Annotated *N. lapillus* transcriptome -- contigs + protein names
 
 File here: [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)
 
-### Product 3: Count Bar Graph of protein functions for *N. lapillus* contigs
+### Subset stress related contigs
+
+Since I am especially interested in stress response of marine organisms, I created subsets of my annotation datasets that are specific to stress related contigs.
+
+I did this in command line, subsetting my [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) file for rows that include the phrase "stress response" as a GOSlim term:
+
+	$ awk -F"," '/[Ss]tress response/ {print $0}' Nlap_annotated_GO.csv > Nlap_anno
+	tated_GO_stress.csv
+
+Product 3: Annotated *N. lapillus* transcriptome -- contigs + GO info, stress related proteins only
+
+File here: [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv)
+
+I also made a subset of stress related contigs with protein names information. Since the annotated protein names file ([`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)) does not include GoSlim terms, I couldn't use `awk` to directly subset it. So, I uploaded [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) onto SQLShare ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_GO_stress.csv)) and used that to join with my protein names file ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames)), matching by their shared SPIDs:
+
+![Nlapannotated-prot-stress](./img/Capture7.PNG)
+
+Product 4: Annotated *N. lapillus* transcriptome -- contigs + protein names, stress related proteins only
+
+File here: [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_proteinnames_stress.csv)
+
+
+# Visualize results
+
+### Bar graph of protein functions
 
 After fiddling unsuccessfully with R, I decided to graph with Excel-- just took some elbow grease, is all. Count the number of occurrences of each GoSlim_bin using Excel's `COUNTIF` function, throw it on a column graph, and presto:
 
+Product 5: Count Bar Graph of protein functions for *N. lapillus* contigs
 ![bar](./products/Nlap_GOSlim_count.png)
 
 Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 
-### Product 4: Frequency Pie Chart of protein functions for *N. lapillus* contigs
+### Pie chart of protein functions
 
-Again in Excel, I plotted the percentages of contigs by protein function:
+Again in Excel, I plotted the percentages of contigs by protein function.
+
+Product 6: Frequency Pie Chart of protein functions for *N. lapillus* contigs
 
 ![pie](./products/Nlap_GOSlim_percent.png)
 
 Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
+
+
+
+
+----------
 
 # List of Products
 ### 1) [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) -- contigs and GO info
 
 ### 2) [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv) -- contigs and protein names
 
-### 3) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of counts of protein frequencies
+### 3) [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) -- contigs and GO info, stress related only
 
-### 4) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of percentages of protein frequencies
+### 4) [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_proteinnames_stress.csv) -- contigs and protein names, stress related only
 
+### 5) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of counts of protein frequencies
+
+### 6) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of percentages of protein frequencies
