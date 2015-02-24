@@ -9,4 +9,4 @@
 - `./scripts` - scripts for running analyses, e.g. running blastx
 
 
-- `workflow.md` - documentation for reproducing the project
+- `workflow.md` - documentation of technical details and steps for reproducing the project
