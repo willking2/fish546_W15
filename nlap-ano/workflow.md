@@ -1,11 +1,14 @@
 # Workflow
 
-**TO DO**: "By following the steps in this notebook, you should be able to...."
-"the software/tools that you will need to reproduce these steps are: -Bash, blast,sqlshare, microsoft excel; you can get these programs at..."
+**TO DO**:
 
-Note: this workflow presents my actual steps, which were not necessarily the most efficient.
+- "By following the steps in this notebook, you should be able to...."
+- "the software/tools that you will need to reproduce these steps are: -Bash, blast,sqlshare, microsoft excel; you can get these programs at..."
+- location of files
+- file sizes of large downloads (update data records too)
 
-Summary list of products at end of workflow.
+
+List of products that this workflow produces is at the end of this document.
 
 ## Tunnel to Hummingbird
 On Will's PC (PC Windows 7), open unix shell (GitBash)
