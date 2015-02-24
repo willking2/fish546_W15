@@ -1,5 +1,8 @@
 # Workflow
 
+**TO DO**: "By following the steps in this notebook, you should be able to...."
+"the software/tools that you will need to reproduce these steps are: -Bash, blast,sqlshare, microsoft excel; you can get these programs at..."
+
 Note: this workflow presents my actual steps, which were not necessarily the most efficient.
 
 Summary list of products at end of workflow.
