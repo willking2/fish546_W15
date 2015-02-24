@@ -88,7 +88,7 @@ Notice the Evalue and outputformat as "6" (`.tab`)
 
 Output file here: [`Nlap_uniprot_blastx.tab`](./data/Nlap_uniprot_blastx.tab)
 
-#Concatenate
+#Join
 
 Goal is to link `blastx` `.tab` output file to GO ids (GOID; [Gene Ontology](http://geneontology.org/) database that has functional annotations for protein sequences).
 
