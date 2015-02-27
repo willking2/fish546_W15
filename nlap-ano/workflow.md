@@ -1,6 +1,6 @@
 # Workflow
 
-By following the steps in this workflow, you should be able to produce annotated transcriptomes for the dogwhelk, *Nucella lapillus* with Gene Ontology information and protein names information. You should also be able to produce stress subsets of the annotations. This workflow includes the steps for visualizing the annotations. A list of products produced in this workflow is available at the end of this document.
+By following the steps in this workflow, you should be able to produce transcriptome annotation files for the dogwhelk, *Nucella lapillus* with Gene Ontology information and protein names information. You should also be able to produce stress subsets of the annotations. This workflow includes the steps for visualizing the annotations. A list of products produced in this workflow is available at the end of this document.
 
 Software/tools used in this workflow:
 
