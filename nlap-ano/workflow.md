@@ -23,8 +23,10 @@ Using Bash on a Windows 7 PC, create a tunnel to Hummingbird (Mac OS v10.9.5).
 	hummingbird:~ srlab$ pwd
 	/Users/srlab
 	hummingbird:~ srlab$
+# 1) Blast
 
-## Obtain Datasets
+Note: Blast was already installed on Roberts Lab Hummingbird and configured so that I can run Blast commands from anywhere in the directory (as opposed to the usual case where I have to specify full file path to command, e.g. ../bin/blastx)
+
 ### Obtain *N. lapillus* transcriptome
 Download (point and click) *N. lapillus* transcriptome (`.fa`, 50,698 KB) from [Dryad Digital Repository](http://dx.doi.org/10.5061/dryad.610dd) published in [Chu et al. (2014)](http://dx.doi.org/10.1111/mec.12681) onto Windows PC.
 
@@ -41,33 +43,26 @@ Someone cloned the repo for me in command line, so I don't have the exact code f
 ### Obtain Uniprot dataset
 Download zipped Uniprot-SwissProt dataset (`.fasta.gz`, 260,395 KB) from [Uniprot website](http://www.uniprot.org/downloads) onto Roberts lab Hummingbird.
 
-	hummingbird:willbigdata srlab$ pwd 
-	/Users/srlab/willbigdata
-	hummingbird:willbigdata srlab$ curl -o uniprot_sprot.fasta.gz ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
+	hummingbird:willbigdata srlab$ curl -o uniprot_sprot.fasta.gz \
+	ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 
 Unzip the file
 	
-	hummingbird:willbigdata srlab$ pwd 
-	/Users/srlab/willbigdata
-	hummingbird:willbigdata srlab$ ls
-	uniprot_sprot.fasta.gz
 	hummingbird:willbigdata srlab$ gzip -d uniprot_sprot.fasta.gz
 	hummingbird:willbigdata srlab$ ls
 	uniprot_sprot.fasta
 
-#Blast
 
-Note: I used Blast 2.2.29. This was already installed on Roberts Lab Hummingbird and configured so that I can run Blast commands from anywhere in the directory (as opposed to the usual case where I have to specify full file path to command, e.g. ../bin/blastx)
 
 ### Uniprot --> Blast db
 
 Set Uniprot dataset as the database for `blastx`
 
-	hummingbird:willbigdata srlab$ pwd
-	/Users/srlab/willbigdata
-	hummingbird:willbigdata srlab$ ls
-	uniprot_sprot.fasta
-	hummingbird:willbigdata srlab$ makeblastdb -in uniprot_sprot.fasta -dbtype -out uniprot_sprot_21JAN2015
+	hummingbird:willbigdata srlab$ makeblastdb \
+	 -in uniprot_sprot.fasta \
+	 -dbtype \
+	 -out uniprot_sprot_21JAN2015
+
 	Building a new DB, current time: 01/21/2015 20:48:51
 	New DB name:   uniprot_sprot_21JAN2015
 	New DB title:  uniprot_sprot.fasta
@@ -83,17 +78,20 @@ This creates the blast database, which appears as three separate files (`uniprot
 
 Notice the Evalue and outputformat as "6" (`.tab`)
 
-	hummingbird:willbigdata srlab$ pwd
-	/Users/srlab/willbigdata
 	hummingbird:willbigdata srlab$ ls
 	uniprot_sprot.fasta             uniprot_sprot_21JAN2015.pin
 	uniprot_sprot_21JAN2015.phr     uniprot_sprot_21JAN2015.psq
-	hummingbird:willbigdata srlab$ blastx -query /Users/srlab/fish546_W15/nlap-ano/
-	data/N_lapillus.fa -db uniprot_sprot_21JAN2015 -out Nlap_uniprot_blastx.tab -evalue 1E-20 -max_target_seqs 1 -outfmt 6
+	hummingbird:willbigdata srlab$ blastx \
+	 -query /Users/srlab/fish546_W15/nlap-ano/data/N_lapillus.fa \
+	 -db uniprot_sprot_21JAN2015 \
+	 -out Nlap_uniprot_blastx.tab \
+	 -evalue 1E-20 \
+	 -max_target_seqs 1 \
+	 -outfmt 6
 
 Output file here: [`Nlap_uniprot_blastx.tab`](./data/Nlap_uniprot_blastx.tab)
 
-#Join
+# 2) Gene Ontology and Protein Info
 
 Goal is to link `blastx` `.tab` output file to GO ids (GOID; [Gene Ontology](http://geneontology.org/) database that has functional annotations for protein sequences).
 
@@ -117,7 +115,7 @@ I then uploaded  (point and click) the file ([`Nlap_uniprot_blastx2.tab`](./data
 
 	SELECT * FROM [wking2@washington.edu].[table_Nlap_uniprot)blastx2_4.tab]
 
-[screenshot](./img/Capture.PNG)
+![screenshot](./img/Capture.PNG)
 
 ### Join to GO id's
 
@@ -134,13 +132,13 @@ The [resulting table](https://sqlshare.escience.washington.edu/sqlshare/#s=query
 		on
 		blast.Column3 = unp.SPID
 
-[screenshot](./img/Capture3.PNG)
+![screenshot](./img/Capture3.PNG)
 
 ### Join to GOSlim terms
 
 Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) from the previous step to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim) (Roberts lab resource) that has both GOID and GOSlim terms. 
 
-[screenshot](./img/Capture4.PNG)
+![screenshot](./img/Capture4.PNG)
 
 	SELECT *
 		FROM [wking2@washington.edu].[blast_SPID_join]blasp
@@ -149,7 +147,7 @@ Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sql
 		on
 		blasp.GOID=gb.GO_id
 
-[screenshot](./img/Capture5.PNG)
+![screenshot](./img/Capture5.PNG)
 
 The resulting table is my [annotated *Nucella lapillus* transcriptome with contigs and GO info (Product 1)](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated) that has blastx output data, SPID, GOID, and GOSlim terms.
 
@@ -168,7 +166,7 @@ Using SQLShare, I joined my blastx output table (`Nlap_uniprot_blastx2_4.tab`)  
 		on
 		blast.Column3 = prot.SPID
 
-[screenshot](./img/Capture6.PNG)
+![screenshot](./img/Capture6.PNG)
 
 Product 2: Annotated *N. lapillus* transcriptome -- contigs + protein names
 
@@ -196,14 +194,14 @@ I also made a subset of stress related contigs with protein names information. S
 		on
 		stress.Column3 = names.SPID
 
-[screenshot](./img/Capture7.PNG)
+![screenshot](./img/Capture7.PNG)
 
 Product 4: Annotated *N. lapillus* transcriptome -- contigs + protein names, stress related proteins only
 
 File here: [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_proteinnames_stress.csv)
 
 
-# Visualize results
+# 3) Visualization
 
 ### Bar graph of protein functions
 
@@ -211,40 +209,23 @@ Open [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) in Excel.
 
 Make a separate three column table. First column is "`categories`" and has all of the unique GoSlim categories (bins):
 
-	cell-cell signaling
-	cell adhesion
-	cell cycle and proliferation
-	cell organization and biogenesis
-	cytoskeletal activity
-	cytoskeleton
-	cytosol
-	death
-	developmental processes
-	DNA metabolism
-	enzyme regulator activity
-	ER/Golgi
-	kinase activity
-	mitochondrion
-	non-structural extracellular
-	nucleic acid binding activity
-	nucleus
-	other biological processes
-	other cellular component
-	other cytoplasmic organelle
-	other membranes
-	other metabolic processes
-	other molecular function
-	plasma membrane
-	protein metabolism
-	RNA metabolism
-	signal transduction
-	signal transduction activity
-	stress response
-	transcription regulatory activity
-	translation activity
-	translational apparatus
-	transport
-	transporter activity
+	cell-cell signaling						cell adhesion
+	cell cycle and proliferation			cell organization and biogenesis
+	cytoskeletal activity					cytoskeleton
+	cytosol									death
+	developmental processes					DNA metabolism
+	enzyme regulator activity				ER/Golgi
+	kinase activity							mitochondrion
+	non-structural extracellular			nucleic acid binding activity
+	nucleus									other biological processes
+	other cellular component				other cytoplasmic organelle
+	other membranes							other metabolic processes
+	other molecular function				plasma membrane
+	protein metabolism						RNA metabolism
+	signal transduction						signal transduction activity
+	stress response							transcription regulatory activity
+	translation activity					translational apparatus
+	transport								transporter activity
 
 Second column is the counts of each category in  of [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv). Do this using `COUNTIF` Excel function where the `range` is the "`GOSlim_bin`" column and the `criteria` is "`categories`" column. 
 
@@ -286,14 +267,14 @@ Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 ----------
 
 # List of Products
-1) [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) -- contigs and GO info
+1) [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) -- contigs and GO info
 
-2) [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv) -- contigs and protein names
+2) [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv) -- contigs and protein names
 
 3) [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) -- contigs and GO info, stress related only
 
 4) [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_proteinnames_stress.csv) -- contigs and protein names, stress related only
 
-5) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of counts of protein frequencies
+5) [`Nlap_GOSlim_count.png`](./products/Nlap_GOSlim_count.png) -- graph of counts of protein frequencies
 
-6) [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx) -- graph of percentages of protein frequencies
+6) [`Nlap_GOSlim_percent.png`](./products/Nlap_GOSlim_percent.png) -- graph of percentages of protein frequencies
