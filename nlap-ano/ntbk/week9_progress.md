@@ -1,6 +1,20 @@
 #Week 9 to do
 
-make more products
+1. Revise workflow
+	1. count figures: biological process, ceullular compartment/compoentn, molecular function (by aspect)
+3. Revise Product
+	1. make sure all comments incorporated
+2. Course_Project
+	1. Product <-- is this the 'products' directory?
+	2. Workflow
+	3. Data Record 
 
-- count figures: biological process, ceullular compartment/compoentn, molecular function (by aspect)
-- word cloud of stress response ?
+
+Steven's comments on Workflow:
+
+- make two workflows: one w/ specific info for you, one that's more generic
+- leave out tunnel stuff
+- use \ for line breaks in code
+- embed screenshots
+- links at bottom broken
+- simply with categories: 1) blast, 2) Gene Ontology Info, 3) Visualization
