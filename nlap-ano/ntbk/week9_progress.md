@@ -1,7 +1,7 @@
 #Week 9 to do
 
 1. Revise workflow
-	1. count figures: biological process, cellular compartment/components, molecular function (by aspect)
+	1. DONE count figures: biological process, cellular compartment/components, molecular function (by aspect)
 3. Revise Product
 	1. make sure all comments incorporated
 2. Course_Project
