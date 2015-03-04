@@ -209,7 +209,9 @@ File here: [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_
 
 # 3) Visualization
 
-### Bar graph of protein functions
+### Bar graphs of protein functions
+
+#### All GO aspects
 
 Open [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) in Excel.
 
@@ -237,23 +239,37 @@ Second column is the counts of each category in  of [`Nlap_annotated_GO.csv`](./
 
 Also calculate count total (should equal number of rows in "`GOSlim_bin`"). Call this cell `total`. 
 
-Third column (`"%"`) is the percentage of each bin, calculated as `(count/total)*100`.
+Third column ("`%`") is the percentage of each bin, calculated as `(count/total)*100`.
 
 The first few rows of the table should look like this:
 
-	categories						count	%
-	cell-cell signaling				6		0.253699789
-	cell adhesion					17		0.718816068
-	cell cycle and proliferation	39		1.649048626
+	categories						count	%				aspect
+	cell-cell signaling				6		0.253699789		
+	cell adhesion					17		0.718816068		
+	cell cycle and proliferation	39		1.649048626		
 
 Using the `Insert Chart` Excel function, plot a bar graph of the table with categories on the y-axis and counts on the x-axis. 
 
 Change appearance to taste. 
 
 Product 5: Count Bar Graph of protein functions for *N. lapillus* contigs
-![bar](./products/Nlap_GOSlim_count.png)
+![bar](./products/Nlap_GOSlim_counts_allaspects.png)
 
-Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
+
+#### Plots by GO aspects
+
+Repeat the graph making process as described above, but this time make separate graphs for each Gene ontology aspect. 
+
+Do this by making a separate three column table for each aspect: F, C, or P. Aspects are in the last column of the [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) file. 
+
+Product 6: Count Bar Graph of protein functions for *N. lapillus* contigs for biological process aspect
+![biofunction](./products/Nlap_GOSlim_counts_biologicalprocess.png)
+
+Product 7: Count Bar Graph of protein functions for *N. lapillus* contigs for cellular component aspect
+![celcompo](./products/Nlap_GOSlim_counts_cellularcomponent.png)
+
+Product 8: Count Bar Graph of protein functions for *N. lapillus* contigs for molecular function aspect
+![molfunc](./products/Nlap_GOSlim_counts_molecularfunction.png)
 
 ### Pie chart of protein functions
 
@@ -261,9 +277,9 @@ Using the table of category counts generated for the bar graph above, use the `I
 
 Change appearance to taste. 
 
-Product 6: Frequency Pie Chart of protein functions for *N. lapillus* contigs
+Product 9: Frequency Pie Chart of protein functions for *N. lapillus* contigs
 
-![pie](./products/Nlap_GOSlim_percent.png)
+![pie](./products/Nlap_GOSlim_pie.png)
 
 Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 
@@ -273,14 +289,22 @@ Excel file here: [`Nlap_GO_plot.xlsx`](./analyses/Nlap_GO_plot.xlsx)
 ----------
 
 # List of Products
-1) [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) -- contigs and GO info
 
-2) [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv) -- contigs and protein names
+
+1) [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) -- contigs and GO info
+
+2) [`Nlap_annotated_proteinnames.csv`](./data/Nlap_annotated_proteinnames.csv) -- contigs and protein names
 
 3) [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) -- contigs and GO info, stress related only
 
 4) [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_proteinnames_stress.csv) -- contigs and protein names, stress related only
 
-5) [`Nlap_GOSlim_count.png`](./products/Nlap_GOSlim_count.png) -- graph of counts of protein frequencies
+5) [`Nlap_GOSlim_counts_allaspects.png`](./products/Nlap_GOSlim_counts_allaspects.png) -- graph of counts of protein frequencies for all aspects
 
-6) [`Nlap_GOSlim_percent.png`](./products/Nlap_GOSlim_percent.png) -- graph of percentages of protein frequencies
+6) [`Nlap_GOSlim_counts_biologicalprocess.png`](./products/Nlap_GOSlim_counts_biologicalprocess.png) -- graph of counts of protein frequencies for biological process aspect
+
+7) [`Nlap_GOSlim_counts_cellularcomponents.png`](./products/Nlap_GOSlim_counts_cellularcomponents.png) -- graph of counts of protein frequencies for cellular component aspect
+
+8) [`Nlap_GOSlim_counts_molecularfunction.png`](./products/Nlap_GOSlim_counts_molecularfunction.png) -- graph of counts of protein frequencies for molecular function aspect
+
+9) [`Nlap_GOSlim_pie.png`](./products/Nlap_GOslim_pie.png) -- graph of percentages of protein frequencies
