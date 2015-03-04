@@ -2,6 +2,12 @@
 
 By following the steps in this workflow, you should be able to produce transcriptome annotation files for the dogwhelk, *Nucella lapillus* with Gene Ontology information and protein names information. You should also be able to produce stress subsets of the annotations. This workflow includes the steps for visualizing the annotations. A list of products produced in this workflow is available at the end of this document.
 
+This workflow is split into three sections:
+
+1. Blast
+2. Gene Ontology and Protein Name Information
+3. Visualization 
+
 Software/tools used in this workflow:
 
 - Windows 7 PC
@@ -121,7 +127,7 @@ I then uploaded  (point and click) the file ([`Nlap_uniprot_blastx2.tab`](./data
 
 Using SQLShare, I joined my blastx output (`Nlap_uniprot_blastx2_4.tab`) to a [SQL table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/SPID%20and%20GO%20Numbers) (Roberts lab resource) that has both SPID and GOID. 
 
-[screenshot](./img/Capture2.PNG)
+![screenshot](./img/Capture2.PNG)
 
 The [resulting table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) has blastx output data, SPID, and corresponding GOID.
 
