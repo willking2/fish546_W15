@@ -2,6 +2,11 @@
 
 By following the steps in this workflow, you should be able to produce transcriptome annotation files for the dogwhelk, *Nucella lapillus* with Gene Ontology information and protein names information. You should also be able to produce stress subsets of the annotations. This workflow includes the steps for visualizing the annotations. A list of products produced in this workflow is available at the end of this document.
 
+This workflow is split into three sections:
+
+1. Blast
+2. Gene Ontology and Protein Name Information
+3. Visualization 
 
 Software/tools used in this workflow:
 
@@ -13,24 +18,36 @@ Software/tools used in this workflow:
 - Microsoft Excel 2013 for Windows
 - GitHub GUI for windows ([link](https://windows.github.com/))
 
+## Tunnel to Hummingbird
 
-This workflow is split into three sections:
+Using Bash on a Windows 7 PC, create a tunnel to Hummingbird (Mac OS v10.9.5).
 
-1. Blast
-2. Gene Ontology and Protein Name Information
-3. Visualization 
-
-
+	Owner@OWNER-PC ~
+	$ ssh srlab@<insert_IPaddress_and_Port_here>
+	Password:<insert_password_here>
+	Last login: Mon Feb  2 20:20:50 2015 from c-71-227-172-56.hsd1.wa.comcast.net
+	hummingbird:~ srlab$ pwd
+	/Users/srlab
+	hummingbird:~ srlab$
 # 1) Blast
 
+Note: Blast was already installed on Roberts Lab Hummingbird and configured so that I can run Blast commands from anywhere in the directory (as opposed to the usual case where I have to specify full file path to command, e.g. ../bin/blastx)
+
 ### Obtain *N. lapillus* transcriptome
-Download *N. lapillus* transcriptome (`.fa`, 50,698 KB) from [Dryad Digital Repository](http://dx.doi.org/10.5061/dryad.610dd) published in [Chu et al. (2014)](http://dx.doi.org/10.1111/mec.12681). Name the file `N.lapillus.fa`.
+Download (point and click) *N. lapillus* transcriptome (`.fa`, 50,698 KB) from [Dryad Digital Repository](http://dx.doi.org/10.5061/dryad.610dd) published in [Chu et al. (2014)](http://dx.doi.org/10.1111/mec.12681) onto Windows PC.
+
+Rename transcriptome to `N.lapillus.fa`. Push transcriptome (`N.lapillus.fa`) to [GitHub repo](https://github.com/willking2/fish546_W15/tree/master/nlap-ano/data).
 
 File here: [`N.lapillus.fa`](./data/N_lapillus.fa)
 
+Clone the GitHub repo in Hummingbird (`/Users/srlab/fish546_W15/nlap-ano`) so that it can be accessed in Hummingbird. 
+
+Someone cloned the repo for me in command line, so I don't have the exact code for it. Alternatively, you could just download the *N. lapillus* transcriptome directly on Hummingbird.
+
+
 
 ### Obtain Uniprot dataset
-Download zipped Uniprot-SwissProt dataset (`.fasta.gz`, 260,395 KB) from [Uniprot website](http://www.uniprot.org/downloads).
+Download zipped Uniprot-SwissProt dataset (`.fasta.gz`, 260,395 KB) from [Uniprot website](http://www.uniprot.org/downloads) onto Roberts lab Hummingbird.
 
 	hummingbird:willbigdata srlab$ curl -o uniprot_sprot.fasta.gz \
 	ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
@@ -41,14 +58,17 @@ Unzip the file
 	hummingbird:willbigdata srlab$ ls
 	uniprot_sprot.fasta
 
-### Specify Blast database
+
+
+### Uniprot --> Blast db
 
 Set Uniprot dataset as the database for `blastx`
 
 	hummingbird:willbigdata srlab$ makeblastdb \
-	-in uniprot_sprot.fasta \
-	-dbtype \
-	-out uniprot_sprot_21JAN2015
+	 -in uniprot_sprot.fasta \
+	 -dbtype \
+	 -out uniprot_sprot_21JAN2015
+
 	Building a new DB, current time: 01/21/2015 20:48:51
 	New DB name:   uniprot_sprot_21JAN2015
 	New DB title:  uniprot_sprot.fasta
@@ -58,44 +78,46 @@ Set Uniprot dataset as the database for `blastx`
 	Maximum file size: 1000000000B
 	Adding sequences from FASTA; added 547357 sequences in 54.0656 seconds.
 
-This creates the blast database, which appears as three separate files recognized by `blast`.
-
-	uniprot_sprot_21JAN2015.pin
-	uniprot_sprot_21JAN2015.phr
-	uniprot_sprot_21JAN2015.psq
+This creates the blast database, which appears as three separate files (`uniprot_sprot_21JAN2015.pin`, `uniprot_sprot_21JAN2015.phr`, and `uniprot_sprot_21JAN2015.psq`) recognized by `blast`.
 
 ### Run blastx
+
+Notice the Evalue and outputformat as "6" (`.tab`)
 
 	hummingbird:willbigdata srlab$ ls
 	uniprot_sprot.fasta             uniprot_sprot_21JAN2015.pin
 	uniprot_sprot_21JAN2015.phr     uniprot_sprot_21JAN2015.psq
 	hummingbird:willbigdata srlab$ blastx \
-	-query /Users/srlab/fish546_W15/nlap-ano/data/N_lapillus.fa \
-	-db uniprot_sprot_21JAN2015 \
-	-out Nlap_uniprot_blastx.tab \
-	-evalue 1E-20 \
-	-max_target_seqs 1 \
-	-outfmt 6
-
-Notice the Evalue and outputformat as "6" (`.tab`)
+	 -query /Users/srlab/fish546_W15/nlap-ano/data/N_lapillus.fa \
+	 -db uniprot_sprot_21JAN2015 \
+	 -out Nlap_uniprot_blastx.tab \
+	 -evalue 1E-20 \
+	 -max_target_seqs 1 \
+	 -outfmt 6
 
 Output file here: [`Nlap_uniprot_blastx.tab`](./data/Nlap_uniprot_blastx.tab)
 
 # 2) Gene Ontology and Protein Name Info
 
-Link `blastx` `.tab` output file to GO ids (GOID; [Gene Ontology](http://geneontology.org/)).
+Goal is to link `blastx` `.tab` output file to GO ids (GOID; [Gene Ontology](http://geneontology.org/) database that has functional annotations for protein sequences).
 
 Take advantage of Roberts Lab tables on [SQLShare](https://sqlshare.escience.washington.edu/accounts/login/?next=/sqlshare/%3F__hash__%3D%2523s%253Dhome#s=home).
 
 ### Isolate SPID
 
-SPID in `blastx` `.tab` output file ([`Nlap_uniprot_blastx.tab`](./data/Nlap_uniprot_blastx.tab)) is among a string of text (e.g. `sp|Q9V8P9|TOPRS_DROME`). Isolate SPID into its own column by changing `|` to tabs (since it's tab delimited) (e.g. `sp	Q9V8P9	TOPRS_DROME`).
+The `blastx` `.tab` output file has the Swissprot ID (SPID) jammed in one column with other text (e.g. `sp|Q9V8P9|TOPRS_DROME`). To match it with another table, however, I need it in its own column. So, I isolate it by telling unix to change all the `|` to tabs, since it's a tab delimited file.
 
 	cat Nlap_uniprot_blastx.tab | tr '|' '\t' > Nlap_uniprot_blastx2.tab
+
+Now, the SPID can be in its own column! (e.g. `sp	Q9V8P9	TOPRS_DROME`) 
 
 Output file here: [`Nlap_uniprot_blastx2.tab`](./data/Nlap_uniprot_blastx2.tab)
 
 ### Upload blastx output to SQLShare
+
+I physically sat at Hummingbird desktop and got my `Nlap_uniprot_blastx.tab` file off of it using a USB, then put it onto my (Will's) PC. 
+
+I then uploaded  (point and click) the file ([`Nlap_uniprot_blastx2.tab`](./data/Nlap_uniprot_blastx2.tab)) with isolated SPID (see previous step) as a database onto SQLShare (`Nlap_uniprot_blastx2_4.tab`).
 
 	SELECT * FROM [wking2@washington.edu].[table_Nlap_uniprot)blastx2_4.tab]
 
@@ -103,7 +125,7 @@ Output file here: [`Nlap_uniprot_blastx2.tab`](./data/Nlap_uniprot_blastx2.tab)
 
 ### Join to GO id's
 
-Join blastx output (`Nlap_uniprot_blastx2_4.tab`) to a [SQL table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/SPID%20and%20GO%20Numbers) that has both SPID and GOID. 
+Using SQLShare, I joined my blastx output (`Nlap_uniprot_blastx2_4.tab`) to a [SQL table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/SPID%20and%20GO%20Numbers) (Roberts lab resource) that has both SPID and GOID. 
 
 ![screenshot](./img/Capture2.PNG)
 
@@ -120,7 +142,7 @@ The [resulting table](https://sqlshare.escience.washington.edu/sqlshare/#s=query
 
 ### Join to GOSlim terms
 
-Using SQLShare, join [table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) from the previous step to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim) that has both GOID and GOSlim terms. 
+Using SQLShare, I joined my [table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) from the previous step to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim) (Roberts lab resource) that has both GOID and GOSlim terms. 
 
 ![screenshot](./img/Capture4.PNG)
 
@@ -133,7 +155,7 @@ Using SQLShare, join [table](https://sqlshare.escience.washington.edu/sqlshare/#
 
 ![screenshot](./img/Capture5.PNG)
 
-The resulting table is an [annotated *Nucella lapillus* transcriptome with contigs and GO info](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated) that has blastx output data, SPID, GOID, and GOSlim terms.
+The resulting table is my [annotated *Nucella lapillus* transcriptome with contigs and GO info (Product 1)](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated) that has blastx output data, SPID, GOID, and GOSlim terms.
 
 Product 1: Annotated *N. lapillus* transcriptome -- contigs + GO info
 
@@ -141,7 +163,7 @@ File here: [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv)
 
 ### Join to Protein names
 
-Using SQLShare, join blastx output table (`Nlap_uniprot_blastx2_4.tab`)  to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/samwhite%40washington.edu/UniprotProtNamesReviewed_yes20130610) that has both SPID and Protein names. The resulting table is an [annotated *Nucella lapillus* transcriptome with contigs and protein names](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames) that has blastx output data, SPID, and protein names.
+Using SQLShare, I joined my blastx output table (`Nlap_uniprot_blastx2_4.tab`)  to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/samwhite%40washington.edu/UniprotProtNamesReviewed_yes20130610) (Roberts lab resource) that has both SPID and Protein names. The resulting table is my [annotated *Nucella lapillus* transcriptome with contigs and protein names (Product 2)](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames) that has blastx output data, SPID, and protein names.
 
 	SELECT *
 		FROM [wking2@washington.edu].[Nlap_uniprot_blastx2_4.tab]blast
@@ -158,11 +180,9 @@ File here: [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_protein
 
 ### Subset stress related contigs
 
-#### subset with GOSlim information
+Since I am especially interested in stress response of marine organisms, I created subsets of my annotation datasets that are specific to stress related contigs.
 
-Create subsets of annotation datasets specific to stress related contigs.
-
-Subset [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) file for rows that include the phrase "stress response" as a GOSlim term
+I did this in command line, subsetting my [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) file for rows that include the phrase "stress response" as a GOSlim term:
 
 	$ awk -F"," '/[Ss]tress response/ {print $0}' Nlap_annotated_GO.csv > Nlap_anno
 	tated_GO_stress.csv
@@ -171,9 +191,7 @@ Product 3: Annotated *N. lapillus* transcriptome -- contigs + GO info, stress re
 
 File here: [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv)
 
-#### subset with protein names information
-
-Since the annotated protein names file ([`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)) does not include GoSlim terms, upload [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) onto SQLShare ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_GO_stress.csv)) and join that to protein names file ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames)), matching by their shared SPIDs.
+I also made a subset of stress related contigs with protein names information. Since the annotated protein names file ([`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)) does not include GoSlim terms, I couldn't use `awk` to directly subset it. So, I uploaded [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) onto SQLShare ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_GO_stress.csv)) and used that to join with my protein names file ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames)), matching by their shared SPIDs.
 
 	SELECT *
 		FROM [wking2@washington.edu].[Nlap_annotated_GO_stress.csv]stress
@@ -242,7 +260,7 @@ Product 5: Count Bar Graph of protein functions for *N. lapillus* contigs
 
 Repeat the graph making process as described above, but this time make separate graphs for each Gene ontology aspect. 
 
-Do this by making a separate three column table for each aspect: F, C, or P. Aspects are in the last column of the [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) file. Use Excel's sorting fuction. 
+Do this by making a separate three column table for each aspect: F, C, or P. Aspects are in the last column of the [`Nlap_annotated_GO.csv`](./data/Nlap_annotated_GO.csv) file. 
 
 Product 6: Count Bar Graph of protein functions for *N. lapillus* contigs for biological process aspect
 ![biofunction](./products/Nlap_GOSlim_counts_biologicalprocess.png)
@@ -255,7 +273,7 @@ Product 8: Count Bar Graph of protein functions for *N. lapillus* contigs for mo
 
 ### Pie chart of protein functions
 
-With the table of category counts generated for the bar graph above, use the `Insert Chart` Excel function again, this time choosing Pie Chart. 
+Using the table of category counts generated for the bar graph above, use the `Insert Chart` Excel function again, this time choosing Pie Chart. 
 
 Change appearance to taste. 
 
