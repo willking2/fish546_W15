@@ -8,7 +8,7 @@ To annotate the contigs with protein information, I joined the `Blastx` output d
 
 The Gene Ontology information was obtained from datasets available on `SQLShare` that link Uniprot SwissProt ascension numbers to GO identification codes [`SPID and GO Numbers`] to GOSlim identification codes [`GO_to_GOSlim`]. Similarly, protein information was obtained from a dataset available on `SQLShare` that links Uniprot SwissProt ascension numbers to protein names [`UniprotNamesNamesReviewed_yes20130610`]. Joins resulted in datasets of contigs with corresponding Gene ontology information [`Nlap_annotated_GO.csv`] and protein names [`Nlap_annotated_proteinnames.csv`]. Using these files, I also created subset datasets containing only information for contigs related to stress response [`Nlap_annotated_GO_stress.csv`; `Nlap_annotated_proteinnames_stress.csv`].
 
-Counts [`Nlap_GOSlim_count.png`] and proportions by protein functions of contigs were plotted using Microsoft Excel.
+Counts [`Nlap_GOSlim_counts_allaspects.png`] and proportions [`Nlap_GOSlim_pie.png`] by protein functions of contigs were plotted. Plots separated by Gene Ontology aspects [`Nlap_GOSlim_counts_biologicalprocess.png`, `Nlap_GOSlim_counts_cellularcomponent.png`, and `Nlap_GOSlim_counts_molecularfunction.png`] were also generated. All plots were generated in Microsoft Excel. 
 
 -------------------------------------------
 

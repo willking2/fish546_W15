@@ -49,14 +49,26 @@ The`Nlap_annotated_GO_stress.csv` file is the annotated *N. lapillus* transcript
 
 The `Nlap_annotated_proteinnames_stress.csv` file is the annotated *N. lapillus* transcriptome produced from this project that has protein names corresponding to each contig, for contigs related to stress response only. It is in `.csv` format. The dataset is available on `GitHub` ([here](https://github.com/willking2/fish546_W15/tree/master/nlap-ano/products)) and `SQLShare` as "`Nlap_annotated_proteinnames_stress`" ([here](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames_stress)).
 
-- [`Nlap_GOSlim_count.png`]
+- [`Nlap_GOSlim_counts_allaspects.png`]
 
-The `Nlap_GOSlim_count.png` file is a bar plot of the counts of protein functions in the *N. lapillus* transcriptome. It is an image (`.png` format) that can be found on `GitHub` ([here](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_count.png)).
+The `Nlap_GOSlim_counts_allaspects.png` file is a bar plot of the counts of protein functions in the *N. lapillus* transcriptome for all aspects. It is an image (`.png` format) that can be found on `GitHub` ([here](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_counts_allaspects.png)).
 
 Proteins of "other molecular function" had the highest count.
 
-- [`Nlap_GOSlim_percent.png`]
+- [`Nlap_GOSlim_counts_biologicalprocess.png`]
 
-The `Nlap_GOSlim_percent.png` file is a pie chart of the proportions (in %) of protein functions in the *N. lapillus* transcriptome. It is an image (`.png` format) that can be found on `GitHub` ([here](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_percent.png)).
+The `Nlap_GOSlim_counts_biologicalprocess.png` file is a bar plot of the counts of protein functions in the *N. lapillus* transcriptome for the GO biological process aspect. It is an image (`.png` format) that can be found on `GitHub` ([here](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_counts_biologicalprocess.png)).
+
+- [`Nlap_GOSlim_counts_cellularcomponent.png`]
+ 
+The `Nlap_GOSlim_counts_cellularcomponent.png` file is a bar plot of the counts of protein functions in the *N. lapillus* transcriptome for the GO cellular component aspect. It is an image (`.png` format) that can be found on `GitHub` ([here](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_counts_cellularcomponent.png)).
+
+- [`Nlap_GOSlim_counts_molecularfunction.png`]
+
+The `Nlap_GOSlim_counts_molecularfunction.png` file is a bar plot of the counts of protein functions in the *N. lapillus* transcriptome for the GO molecular function aspect. It is an image (`.png` format) that can be found on `GitHub` ([here](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_counts_molecularfunction.png)).
+
+- [`Nlap_GOSlim_pie.png`]
+
+The `Nlap_GOSlim_pie.png` file is a pie chart of the proportions (in %) of protein functions in the *N. lapillus* transcriptome. It is an image (`.png` format) that can be found on `GitHub` ([here](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/products/Nlap_GOSlim_pie.png)).
 
 Proteins of "other molecular function" had the highest proportion. 
