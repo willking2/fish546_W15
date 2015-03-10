@@ -285,7 +285,7 @@ Excel file here: [`Nlap_GO_plot.xlsx`](../analyses/Nlap_GO_plot.xlsx)
 
 6) [`Nlap_GOSlim_counts_biologicalprocess.png`](../products/Nlap_GOSlim_counts_biologicalprocess.png) -- graph of counts of protein frequencies for biological process aspect
 
-7) [`Nlap_GOSlim_counts_cellularcomponents.png`](../products/Nlap_GOSlim_counts_cellularcomponents.png) -- graph of counts of protein frequencies for cellular component aspect
+7) [`Nlap_GOSlim_counts_cellularcomponent.png`](../products/Nlap_GOSlim_counts_cellularcomponent.png) -- graph of counts of protein frequencies for cellular component aspect
 
 8) [`Nlap_GOSlim_counts_molecularfunction.png`](../products/Nlap_GOSlim_counts_molecularfunction.png) -- graph of counts of protein frequencies for molecular function aspect
 
