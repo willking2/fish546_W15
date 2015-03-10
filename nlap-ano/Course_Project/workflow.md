@@ -289,4 +289,4 @@ Excel file here: [`Nlap_GO_plot.xlsx`](../analyses/Nlap_GO_plot.xlsx)
 
 8) [`Nlap_GOSlim_counts_molecularfunction.png`](../products/Nlap_GOSlim_counts_molecularfunction.png) -- graph of counts of protein frequencies for molecular function aspect
 
-9) [`Nlap_GOSlim_pie.png`](../products/Nlap_GOslim_pie.png) -- graph of percentages of protein frequencies
+9) [`Nlap_GOSlim_pie.png`](../products/Nlap_GOSlim_pie.png) -- graph of percentages of protein frequencies
