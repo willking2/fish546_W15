@@ -1,4 +1,4 @@
-# Workflow
+# Workflow - Annotation of *Nucella lapillus* transcriptome
 
 By following the steps in this workflow, you should be able to produce transcriptome annotation files for the dogwhelk, *Nucella lapillus* with Gene Ontology information and protein names information. You should also be able to produce stress subsets of the annotations. This workflow includes the steps for visualizing the annotations. A list of products produced in this workflow is available at the end of this document.
 
@@ -217,7 +217,7 @@ Make a separate three column table. First column is "`categories`" and has all o
 	translation activity					translational apparatus
 	transport								transporter activity
 
-Second column is the counts of each category in  of [`Nlap_annotated_GO.csv`](../data/Nlap_annotated_GO.csv). Do this using `COUNTIF` Excel function where the `range` is the "`GOSlim_bin`" column and the `criteria` is "`categories`" column. 
+Second column is the counts of each category in  of [`Nlap_annotated_GO.csv`](../products/Nlap_annotated_GO.csv). Do this using `COUNTIF` Excel function where the `range` is the "`GOSlim_bin`" column and the `criteria` is "`categories`" column. 
 
 Also calculate count total (should equal number of rows in "`GOSlim_bin`"). Call this cell `total`. 
 
