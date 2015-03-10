@@ -273,9 +273,9 @@ Excel file here: [`Nlap_GO_plot.xlsx`](../analyses/Nlap_GO_plot.xlsx)
 # List of Products
 
 
-1) [`Nlap_annotated_GO.csv`](../data/Nlap_annotated_GO.csv) -- contigs and GO info
+1) [`Nlap_annotated_GO.csv`](../products/Nlap_annotated_GO.csv) -- contigs and GO info
 
-2) [`Nlap_annotated_proteinnames.csv`](../data/Nlap_annotated_proteinnames.csv) -- contigs and protein names
+2) [`Nlap_annotated_proteinnames.csv`](../products/Nlap_annotated_proteinnames.csv) -- contigs and protein names
 
 3) [`Nlap_annotated_GO_stress.csv`](../products/Nlap_annotated_GO_stress.csv) -- contigs and GO info, stress related only
 
