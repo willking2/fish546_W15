@@ -24,7 +24,7 @@ This workflow is split into three sections:
 # 1) Blast
 
 ### Obtain *N. lapillus* transcriptome
-Download *N. lapillus* transcriptome (`.fa`, 50,698 KB) from [Dryad Digital Repository](http://dx.doi.org/10.5061/dryad.610dd) published in [Chu et al. (2014)](http://dx.doi.org/10.1111/mec.12681). Name the file `N.lapillus.fa`.
+Download *N. lapillus* transcriptome (`.fa`, 50,698 KB) from Dryad Digital Repository ([doi link](http://datadryad.org/resource/doi:10.5061/dryad.610dd/4)) published in [Chu et al. (2014)](http://dx.doi.org/10.1111/mec.12681). Name the file `N.lapillus.fa`.
 
 File here: [`N.lapillus.fa`](./data/N_lapillus.fa)
 
@@ -99,7 +99,7 @@ Output file here: [`Nlap_uniprot_blastx2.tab`](./data/Nlap_uniprot_blastx2.tab)
 
 	SELECT * FROM [wking2@washington.edu].[table_Nlap_uniprot)blastx2_4.tab]
 
-![screenshot](./img/Capture.PNG)
+![screenshott](../img/Capture.PNG)
 
 ### Join to GO id's
 
