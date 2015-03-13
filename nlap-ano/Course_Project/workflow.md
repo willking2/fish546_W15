@@ -34,7 +34,7 @@ File here: [`N.lapillus.fa`](https://github.com/willking2/fish546_W15/blob/maste
 ### Obtain Uniprot dataset
 Download zipped Uniprot-SwissProt dataset (`.fasta.gz`, 260,395 KB) from [Uniprot website](http://www.uniprot.org/downloads).
 
-	hummingbird:willbigdata srlab$ curl -o uniprot_sprot.fasta.gz \
+	$ curl -o uniprot_sprot.fasta.gz \
 	ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 
 Unzip the file
