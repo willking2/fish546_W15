@@ -1,3 +1,5 @@
+# Record of data files used and generated as part of this *Nucella lapillus* transcriptome annotation
+
 ## Source files
 
 - [`Nlapillus.fa`]

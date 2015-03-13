@@ -1,3 +1,5 @@
+# Background on this *Nucella lapillus* transcriptome annotation project
+
 Organisms respond to stressors in the environment at behavioral, physiological, cellular, and molecular scales. One way to examine how an organism copes with its environment is to investigate the proteins that it produces.
 
 *Nucella lapillus* is a predatory whelk (also known as Atlantic dogwinkle) that resides in the intertidal zone. As intertidal organisms, they are subject to a variety of environmental stressors, including strong temperature and salinity changes. 
