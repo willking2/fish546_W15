@@ -23,10 +23,12 @@ This workflow is split into three sections:
 
 # 1) Blast
 
+The steps in this section for running `Blast` occur in one directory. 
+
 ### Obtain *N. lapillus* transcriptome
 Download *N. lapillus* transcriptome (`.fa`, 50,698 KB) from Dryad Digital Repository ([doi link](http://datadryad.org/resource/doi:10.5061/dryad.610dd/4)) published in [Chu et al. (2014)](http://dx.doi.org/10.1111/mec.12681). Name the file `N.lapillus.fa`.
 
-File here: [`N.lapillus.fa`](../data/N_lapillus.fa)
+File here: [`N.lapillus.fa`](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/data/N_lapillus.fa)
 
 
 ### Obtain Uniprot dataset
@@ -37,15 +39,15 @@ Download zipped Uniprot-SwissProt dataset (`.fasta.gz`, 260,395 KB) from [Unipro
 
 Unzip the file
 	
-	hummingbird:willbigdata srlab$ gzip -d uniprot_sprot.fasta.gz
-	hummingbird:willbigdata srlab$ ls
+	$ gzip -d uniprot_sprot.fasta.gz
+	$ ls
 	uniprot_sprot.fasta
 
 ### Specify Blast database
 
 Set Uniprot dataset as the database for `blastx`
 
-	hummingbird:willbigdata srlab$ makeblastdb \
+	$ makeblastdb \
 	-in uniprot_sprot.fasta \
 	-dbtype \
 	-out uniprot_sprot_21JAN2015
@@ -66,20 +68,21 @@ This creates the blast database, which appears as three separate files recognize
 
 ### Run blastx
 
-	hummingbird:willbigdata srlab$ ls
-	uniprot_sprot.fasta             uniprot_sprot_21JAN2015.pin
-	uniprot_sprot_21JAN2015.phr     uniprot_sprot_21JAN2015.psq
-	hummingbird:willbigdata srlab$ blastx \
-	-query /Users/srlab/fish546_W15/nlap-ano/data/N_lapillus.fa \
+	$ ls
+	N_lapillus.fa					uniprot_sprot_21JAN2015.pin
+	uniprot_sprot.fasta             uniprot_sprot_21JAN2015.psq
+	uniprot_sprot_21JAN2015.phr     
+	$ blastx \
+	-query N_lapillus.fa \
 	-db uniprot_sprot_21JAN2015 \
 	-out Nlap_uniprot_blastx.tab \
 	-evalue 1E-20 \
 	-max_target_seqs 1 \
 	-outfmt 6
 
-Notice the Evalue and outputformat as "6" (`.tab`)
+Notice the specified Evalue (1E-20) and the outputformat is (6 for `.tab`)
 
-Output file here: [`Nlap_uniprot_blastx.tab`](../data/Nlap_uniprot_blastx.tab)
+Output file here: [`Nlap_uniprot_blastx.tab`](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/data/Nlap_uniprot_blastx.tab)
 
 # 2) Gene Ontology and Protein Name Info
 
@@ -89,15 +92,15 @@ Take advantage of Roberts Lab tables on [SQLShare](https://sqlshare.escience.was
 
 ### Isolate SPID
 
-SPID in `blastx` `.tab` output file ([`Nlap_uniprot_blastx.tab`](../data/Nlap_uniprot_blastx.tab)) is among a string of text (e.g. `sp|Q9V8P9|TOPRS_DROME`). Isolate SPID into its own column by changing `|` to tabs (since it's tab delimited) (e.g. `sp	Q9V8P9	TOPRS_DROME`).
+SPID in `blastx` `.tab` output file ([`Nlap_uniprot_blastx.tab`](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/data/Nlap_uniprot_blastx.tab)) is among a string of text (e.g. `sp|Q9V8P9|TOPRS_DROME`). Isolate SPID into its own column by changing `|` to tabs (since it's tab delimited) (e.g. `sp	Q9V8P9	TOPRS_DROME`).
 
-	cat Nlap_uniprot_blastx.tab | tr '|' '\t' > Nlap_uniprot_blastx2.tab
+	$ cat Nlap_uniprot_blastx.tab | tr '|' '\t' > Nlap_uniprot_blastx2.tab
 
 Output file here: [`Nlap_uniprot_blastx2.tab`](../data/Nlap_uniprot_blastx2.tab)
 
 ### Upload blastx output to SQLShare
 
-	SELECT * FROM [wking2@washington.edu].[table_Nlap_uniprot)blastx2_4.tab]
+	SELECT * FROM [wking2@washington.edu].[table_Nlap_uniprot_blastx2_4.tab]
 
 ![screenshott](../img/Capture.PNG)
 
