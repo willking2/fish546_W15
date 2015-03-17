@@ -140,7 +140,7 @@ The resulting table is an [annotated *Nucella lapillus* transcriptome with conti
 
 Product 1: Annotated *N. lapillus* transcriptome -- contigs + GO info
 
-File here: [`Nlap_annotated_GO.csv`](../products/Nlap_annotated_GO.csv)
+File here: [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv)
 
 ### Join to Protein names
 
