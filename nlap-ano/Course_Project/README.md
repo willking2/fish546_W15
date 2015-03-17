@@ -10,9 +10,6 @@ Items in this directory:
 Contact:
 
 William King
-
 PhD Student
-
 University of Washington
-
 `wking2 [at] uw [dot] edu`
