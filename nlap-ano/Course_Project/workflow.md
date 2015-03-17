@@ -96,13 +96,13 @@ SPID in `blastx` `.tab` output file ([`Nlap_uniprot_blastx.tab`](https://github.
 
 	$ cat Nlap_uniprot_blastx.tab | tr '|' '\t' > Nlap_uniprot_blastx2.tab
 
-Output file here: [`Nlap_uniprot_blastx2.tab`](../data/Nlap_uniprot_blastx2.tab)
+Output file here: [`Nlap_uniprot_blastx2.tab`](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/data/Nlap_uniprot_blastx2.tab)
 
 ### Upload blastx output to SQLShare
 
 	SELECT * FROM [wking2@washington.edu].[table_Nlap_uniprot_blastx2_4.tab]
 
-![screenshott](../img/Capture.PNG)
+![screenshott](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/img/Capture.PNG)
 
 ### Join to GO id's
 
@@ -157,7 +157,7 @@ Using SQLShare, join blastx output table (`Nlap_uniprot_blastx2_4.tab`)  to a [S
 
 Product 2: Annotated *N. lapillus* transcriptome -- contigs + protein names
 
-File here: [`Nlap_annotated_proteinnames.csv`](../products/Nlap_annotated_proteinnames.csv)
+File here: [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)
 
 ### Subset stress related contigs
 
@@ -165,18 +165,18 @@ File here: [`Nlap_annotated_proteinnames.csv`](../products/Nlap_annotated_protei
 
 Create subsets of annotation datasets specific to stress related contigs.
 
-Subset [`Nlap_annotated_GO.csv`](../products/Nlap_annotated_GO.csv) file for rows that include the phrase "stress response" as a GOSlim term
+Subset [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) file for rows that include the phrase "stress response" as a GOSlim term
 
 	$ awk -F"," '/[Ss]tress response/ {print $0}' Nlap_annotated_GO.csv > Nlap_anno
 	tated_GO_stress.csv
 
 Product 3: Annotated *N. lapillus* transcriptome -- contigs + GO info, stress related proteins only
 
-File here: [`Nlap_annotated_GO_stress.csv`](../products/Nlap_annotated_GO_stress.csv)
+File here: [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv)
 
 #### subset with protein names information
 
-Since the annotated protein names file ([`Nlap_annotated_proteinnames.csv`](../products/Nlap_annotated_proteinnames.csv)) does not include GoSlim terms, upload [`Nlap_annotated_GO_stress.csv`](../products/Nlap_annotated_GO_stress.csv) onto SQLShare ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_GO_stress.csv)) and join that to protein names file ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames)), matching by their shared SPIDs.
+Since the annotated protein names file ([`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv)) does not include GoSlim terms, upload [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) onto SQLShare ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_GO_stress.csv)) and join that to protein names file ([link](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated_proteinnames)), matching by their shared SPIDs.
 
 	SELECT *
 		FROM [wking2@washington.edu].[Nlap_annotated_GO_stress.csv]stress
@@ -189,7 +189,7 @@ Since the annotated protein names file ([`Nlap_annotated_proteinnames.csv`](../p
 
 Product 4: Annotated *N. lapillus* transcriptome -- contigs + protein names, stress related proteins only
 
-File here: [`Nlap_annotated_proteinnames_stress.csv`](../products/Nlap_annotated_proteinnames_stress.csv)
+File here: [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_proteinnames_stress.csv)
 
 
 # 3) Visualization
@@ -198,7 +198,7 @@ File here: [`Nlap_annotated_proteinnames_stress.csv`](../products/Nlap_annotated
 
 #### All GO aspects
 
-Open [`Nlap_annotated_GO.csv`](../data/Nlap_annotated_GO.csv) in Excel.
+Open [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) in Excel.
 
 Make a separate three column table. First column is "`categories`" and has all of the unique GoSlim categories (bins):
 
@@ -220,7 +220,7 @@ Make a separate three column table. First column is "`categories`" and has all o
 	translation activity					translational apparatus
 	transport								transporter activity
 
-Second column is the counts of each category in  of [`Nlap_annotated_GO.csv`](../products/Nlap_annotated_GO.csv). Do this using `COUNTIF` Excel function where the `range` is the "`GOSlim_bin`" column and the `criteria` is "`categories`" column. 
+Second column is the counts of each category in  of [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv). Do this using `COUNTIF` Excel function where the `range` is the "`GOSlim_bin`" column and the `criteria` is "`categories`" column. 
 
 Also calculate count total (should equal number of rows in "`GOSlim_bin`"). Call this cell `total`. 
 
@@ -238,23 +238,23 @@ Using the `Insert Chart` Excel function, plot a bar graph of the table with cate
 Change appearance to taste. 
 
 Product 5: Count Bar Graph of protein functions for *N. lapillus* contigs
-![bar](../products/Nlap_GOSlim_counts_allaspects.png)
+![bar](./products/Nlap_GOSlim_counts_allaspects.png)
 
 
 #### Plots by GO aspects
 
 Repeat the graph making process as described above, but this time make separate graphs for each Gene ontology aspect. 
 
-Do this by making a separate three column table for each aspect: F, C, or P. Aspects are in the last column of the [`Nlap_annotated_GO.csv`](../data/Nlap_annotated_GO.csv) file. Use Excel's sorting fuction. 
+Do this by making a separate three column table for each aspect: F, C, or P. Aspects are in the last column of the [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) file. Use Excel's sorting fuction. 
 
 Product 6: Count Bar Graph of protein functions for *N. lapillus* contigs for biological process aspect
-![biofunction](../products/Nlap_GOSlim_counts_biologicalprocess.png)
+![biofunction](./products/Nlap_GOSlim_counts_biologicalprocess.png)
 
 Product 7: Count Bar Graph of protein functions for *N. lapillus* contigs for cellular component aspect
-![celcompo](../products/Nlap_GOSlim_counts_cellularcomponent.png)
+![celcompo](./products/Nlap_GOSlim_counts_cellularcomponent.png)
 
 Product 8: Count Bar Graph of protein functions for *N. lapillus* contigs for molecular function aspect
-![molfunc](../products/Nlap_GOSlim_counts_molecularfunction.png)
+![molfunc](./products/Nlap_GOSlim_counts_molecularfunction.png)
 
 ### Pie chart of protein functions
 
@@ -264,9 +264,9 @@ Change appearance to taste.
 
 Product 9: Frequency Pie Chart of protein functions for *N. lapillus* contigs
 
-![pie](../products/Nlap_GOSlim_pie.png)
+![pie](./products/Nlap_GOSlim_pie.png)
 
-Excel file here: [`Nlap_GO_plot.xlsx`](../analyses/Nlap_GO_plot.xlsx)
+Excel file here: [`Nlap_GO_plot.xlsx`](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/analyses/Nlap_GO_plot.xlsx)
 
 
 
@@ -276,20 +276,20 @@ Excel file here: [`Nlap_GO_plot.xlsx`](../analyses/Nlap_GO_plot.xlsx)
 # List of Products
 
 
-1) [`Nlap_annotated_GO.csv`](../products/Nlap_annotated_GO.csv) -- contigs and GO info
+1) [`Nlap_annotated_GO.csv`](./products/Nlap_annotated_GO.csv) -- contigs and GO info
 
-2) [`Nlap_annotated_proteinnames.csv`](../products/Nlap_annotated_proteinnames.csv) -- contigs and protein names
+2) [`Nlap_annotated_proteinnames.csv`](./products/Nlap_annotated_proteinnames.csv) -- contigs and protein names
 
-3) [`Nlap_annotated_GO_stress.csv`](../products/Nlap_annotated_GO_stress.csv) -- contigs and GO info, stress related only
+3) [`Nlap_annotated_GO_stress.csv`](./products/Nlap_annotated_GO_stress.csv) -- contigs and GO info, stress related only
 
-4) [`Nlap_annotated_proteinnames_stress.csv`](../products/Nlap_annotated_proteinnames_stress.csv) -- contigs and protein names, stress related only
+4) [`Nlap_annotated_proteinnames_stress.csv`](./products/Nlap_annotated_proteinnames_stress.csv) -- contigs and protein names, stress related only
 
-5) [`Nlap_GOSlim_counts_allaspects.png`](../products/Nlap_GOSlim_counts_allaspects.png) -- graph of counts of protein frequencies for all aspects
+5) [`Nlap_GOSlim_counts_allaspects.png`](./products/Nlap_GOSlim_counts_allaspects.png) -- graph of counts of protein frequencies for all aspects
 
-6) [`Nlap_GOSlim_counts_biologicalprocess.png`](../products/Nlap_GOSlim_counts_biologicalprocess.png) -- graph of counts of protein frequencies for biological process aspect
+6) [`Nlap_GOSlim_counts_biologicalprocess.png`](./products/Nlap_GOSlim_counts_biologicalprocess.png) -- graph of counts of protein frequencies for biological process aspect
 
-7) [`Nlap_GOSlim_counts_cellularcomponent.png`](../products/Nlap_GOSlim_counts_cellularcomponent.png) -- graph of counts of protein frequencies for cellular component aspect
+7) [`Nlap_GOSlim_counts_cellularcomponent.png`](./products/Nlap_GOSlim_counts_cellularcomponent.png) -- graph of counts of protein frequencies for cellular component aspect
 
-8) [`Nlap_GOSlim_counts_molecularfunction.png`](../products/Nlap_GOSlim_counts_molecularfunction.png) -- graph of counts of protein frequencies for molecular function aspect
+8) [`Nlap_GOSlim_counts_molecularfunction.png`](./products/Nlap_GOSlim_counts_molecularfunction.png) -- graph of counts of protein frequencies for molecular function aspect
 
-9) [`Nlap_GOSlim_pie.png`](../products/Nlap_GOSlim_pie.png) -- graph of percentages of protein frequencies
+9) [`Nlap_GOSlim_pie.png`](./products/Nlap_GOSlim_pie.png) -- graph of percentages of protein frequencies
