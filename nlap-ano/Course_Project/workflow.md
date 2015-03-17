@@ -108,7 +108,7 @@ Output file here: [`Nlap_uniprot_blastx2.tab`](https://github.com/willking2/fish
 
 Join blastx output (`Nlap_uniprot_blastx2_4.tab`) to a [SQL table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/SPID%20and%20GO%20Numbers) that has both SPID and GOID. 
 
-![screenshot](../img/Capture2.PNG)
+![screenshot](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/img/Capture2.PNG)
 
 The [resulting table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) has blastx output data, SPID, and corresponding GOID.
 
@@ -119,13 +119,13 @@ The [resulting table](https://sqlshare.escience.washington.edu/sqlshare/#s=query
 		on
 		blast.Column3 = unp.SPID
 
-![screenshot](../img/Capture3.PNG)
+![screenshot](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/img/Capture3.PNG)
 
 ### Join to GOSlim terms
 
 Using SQLShare, join [table](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/blast_SPID_join) from the previous step to a [SQLtable](https://sqlshare.escience.washington.edu/sqlshare/#s=query/sr320%40washington.edu/GO_to_GOslim) that has both GOID and GOSlim terms. 
 
-![screenshot](../img/Capture4.PNG)
+![screenshot](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/img/Capture4.PNG)
 
 	SELECT *
 		FROM [wking2@washington.edu].[blast_SPID_join]blasp
@@ -134,7 +134,7 @@ Using SQLShare, join [table](https://sqlshare.escience.washington.edu/sqlshare/#
 		on
 		blasp.GOID=gb.GO_id
 
-![screenshot](../img/Capture5.PNG)
+![screenshot](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/img/Capture5.PNG)
 
 The resulting table is an [annotated *Nucella lapillus* transcriptome with contigs and GO info](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/Nlap_annotated) that has blastx output data, SPID, GOID, and GOSlim terms.
 
@@ -153,7 +153,7 @@ Using SQLShare, join blastx output table (`Nlap_uniprot_blastx2_4.tab`)  to a [S
 		on
 		blast.Column3 = prot.SPID
 
-![screenshot](../img/Capture6.PNG)
+![screenshot](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/img/Capture6.PNG)
 
 Product 2: Annotated *N. lapillus* transcriptome -- contigs + protein names
 
@@ -185,7 +185,7 @@ Since the annotated protein names file ([`Nlap_annotated_proteinnames.csv`](./pr
 		on
 		stress.Column3 = names.SPID
 
-![screenshot](../img/Capture7.PNG)
+![screenshot](https://github.com/willking2/fish546_W15/blob/master/nlap-ano/img/Capture7.PNG)
 
 Product 4: Annotated *N. lapillus* transcriptome -- contigs + protein names, stress related proteins only
 
