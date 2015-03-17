@@ -1,6 +1,6 @@
-# Record of data files used and generated as part of this *Nucella lapillus* transcriptome annotation
+## Record of data files used and generated as part of this *Nucella lapillus* transcriptome annotation
 
-## Source files
+### Source files
 
 - [`Nlapillus.fa`]
 
@@ -10,7 +10,7 @@ The *Nucella lapillus* transcriptome (`Nlapillus.fa`) is a dataset of the transc
 
 The UniprotKB Swissprot dataset (`uniprot_sprot.fasta.gz`) contains protein information including amino acid sequence, protein description, and taxonomic information. It is the dataset against which the *N. lapillus* transcriptome was subject to `Blastx`. The Uniprot Swissprot dataset is in `.fasta` format and can be obtained from the Uniprot website ([here](http://www.uniprot.org/downloads)).
 
-## Intermediary files
+### Intermediary files
 
 - [`Nlap_uniprot_blastx.tab`]
 
@@ -28,7 +28,7 @@ The `GO_to_GOSlim` table contains Gene Ontology identification codes and their c
 
 The `UniprotNamesNamesReviewed_yes20130610` table contains protein names with corresponding Uniprot Swissprot ascension numbers. It links Swissprot information to protein names. It is available on `SQLShare` as "`UniprotNamesNamesReviewed_yes20130610`" ([here](https://sqlshare.escience.washington.edu/sqlshare/#s=query/wking2%40washington.edu/UniprotProtNamesReviewed_yes20130610_immune)). It can be downloaded in `.csv` format. 
 
-## Products
+### Products
 
 - [`Nlap_annotated_GO.csv`]
 

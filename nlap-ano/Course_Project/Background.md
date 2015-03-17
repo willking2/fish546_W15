@@ -1,4 +1,4 @@
-# Background on this *Nucella lapillus* transcriptome annotation project
+## Background on this *Nucella lapillus* transcriptome annotation project
 
 Organisms respond to stressors in the environment at behavioral, physiological, cellular, and molecular scales. One way to examine how an organism copes with its environment is to investigate the proteins that it produces.
 

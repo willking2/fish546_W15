@@ -1,4 +1,4 @@
-# Methods for *Nucella lapillus* transcriptome annotation
+## Methods for *Nucella lapillus* transcriptome annotation
 
 To annotate the transcriptome of the dog whelk, *Nucella lapillus* [`Nlapillus.fa`], I used `Blastx v 2.2.29+` to annotate contigs against the UniProtKB Swiss-prot database [`uniprot_sprot.fasta.gz`], applying an E-value cut-off of 1E-20 to create a `blastx` output file [`Nlap_uniprot_blastx.tab`]. 
 

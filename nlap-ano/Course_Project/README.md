@@ -8,7 +8,11 @@ Items in this directory:
 - `workflow.md` - detailed steps of project
 
 Contact:
+
 William King
+
 PhD Student
+
 University of Washington
+
 `wking2 [at] uw [dot] edu`
